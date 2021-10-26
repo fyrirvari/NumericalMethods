@@ -234,4 +234,5 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 
-!sln\libraries\*
+!sln/libraries/ZedGraph.dll
+
