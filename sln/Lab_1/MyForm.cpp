@@ -1,4 +1,4 @@
-#include "MyForm.h"
+﻿#include "MyForm.h"
 #include <Windows.h>
 
 //using namespace NumericalMethods;

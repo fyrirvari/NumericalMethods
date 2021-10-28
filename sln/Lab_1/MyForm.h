@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <vector>
 
 namespace NumericalMethods {
@@ -47,7 +47,7 @@ namespace NumericalMethods {
 
 
 	/// <summary>
-	/// Сводка для MyForm
+	/// РЎРІРѕРґРєР° РґР»СЏ MyForm
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
@@ -56,14 +56,14 @@ namespace NumericalMethods {
 		{
 			InitializeComponent();
 			//
-			//TODO: добавьте код конструктора
+			//TODO: РґРѕР±Р°РІСЊС‚Рµ РєРѕРґ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
 			//
 			tab_frame->SelectTab(tab_frame->Controls->IndexOf(method_tab));
 		}
 
 	protected:
 		/// <summary>
-		/// Освободить все используемые ресурсы.
+		/// РћСЃРІРѕР±РѕРґРёС‚СЊ РІСЃРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂРµСЃСѓСЂСЃС‹.
 		/// </summary>
 		~MyForm()
 		{
@@ -147,14 +147,14 @@ namespace NumericalMethods {
 
 	private:
 		/// <summary>
-		/// Обязательная переменная конструктора.
+		/// РћР±СЏР·Р°С‚РµР»СЊРЅР°СЏ РїРµСЂРµРјРµРЅРЅР°СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
 		/// </summary>
 
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Требуемый метод для поддержки конструктора — не изменяйте 
-		/// содержимое этого метода с помощью редактора кода.
+		/// РўСЂРµР±СѓРµРјС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° вЂ” РЅРµ РёР·РјРµРЅСЏР№С‚Рµ 
+		/// СЃРѕРґРµСЂР¶РёРјРѕРµ СЌС‚РѕРіРѕ РјРµС‚РѕРґР° СЃ РїРѕРјРѕС‰СЊСЋ СЂРµРґР°РєС‚РѕСЂР° РєРѕРґР°.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -236,7 +236,7 @@ namespace NumericalMethods {
 			// task_selection
 			// 
 			this->task_selection->FormattingEnabled = true;
-			this->task_selection->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Тестовая задача (5)", L"Основная задача 1", L"Основная задача 2" });
+			this->task_selection->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"РўРµСЃС‚РѕРІР°СЏ Р·Р°РґР°С‡Р° (5)", L"РћСЃРЅРѕРІРЅР°СЏ Р·Р°РґР°С‡Р° 1", L"РћСЃРЅРѕРІРЅР°СЏ Р·Р°РґР°С‡Р° 2" });
 			this->task_selection->Location = System::Drawing::Point(29, 25);
 			this->task_selection->Name = L"task_selection";
 			this->task_selection->Size = System::Drawing::Size(196, 21);
@@ -252,7 +252,7 @@ namespace NumericalMethods {
 			this->task_selection_label->Name = L"task_selection_label";
 			this->task_selection_label->Size = System::Drawing::Size(90, 13);
 			this->task_selection_label->TabIndex = 1;
-			this->task_selection_label->Text = L"Выбор задачи";
+			this->task_selection_label->Text = L"Р’С‹Р±РѕСЂ Р·Р°РґР°С‡Рё";
 			// 
 			// task_params_label
 			// 
@@ -263,7 +263,7 @@ namespace NumericalMethods {
 			this->task_params_label->Name = L"task_params_label";
 			this->task_params_label->Size = System::Drawing::Size(155, 13);
 			this->task_params_label->TabIndex = 2;
-			this->task_params_label->Text = L"Параметры задачи Коши";
+			this->task_params_label->Text = L"РџР°СЂР°РјРµС‚СЂС‹ Р·Р°РґР°С‡Рё РљРѕС€Рё";
 			// 
 			// x0_label
 			// 
@@ -331,7 +331,7 @@ namespace NumericalMethods {
 			this->method_params_label->Name = L"method_params_label";
 			this->method_params_label->Size = System::Drawing::Size(122, 13);
 			this->method_params_label->TabIndex = 9;
-			this->method_params_label->Text = L"Параметры метода";
+			this->method_params_label->Text = L"РџР°СЂР°РјРµС‚СЂС‹ РјРµС‚РѕРґР°";
 			// 
 			// h0_label
 			// 
@@ -340,7 +340,7 @@ namespace NumericalMethods {
 			this->h0_label->Name = L"h0_label";
 			this->h0_label->Size = System::Drawing::Size(86, 13);
 			this->h0_label->TabIndex = 10;
-			this->h0_label->Text = L"Начальный шаг";
+			this->h0_label->Text = L"РќР°С‡Р°Р»СЊРЅС‹Р№ С€Р°Рі";
 			// 
 			// is_locerr_required_label
 			// 
@@ -350,7 +350,7 @@ namespace NumericalMethods {
 			this->is_locerr_required_label->Name = L"is_locerr_required_label";
 			this->is_locerr_required_label->Size = System::Drawing::Size(130, 26);
 			this->is_locerr_required_label->TabIndex = 11;
-			this->is_locerr_required_label->Text = L"Учитывать контроль локальной погрешности";
+			this->is_locerr_required_label->Text = L"РЈС‡РёС‚С‹РІР°С‚СЊ РєРѕРЅС‚СЂРѕР»СЊ Р»РѕРєР°Р»СЊРЅРѕР№ РїРѕРіСЂРµС€РЅРѕСЃС‚Рё";
 			// 
 			// locerr_accuracy_label
 			// 
@@ -360,7 +360,7 @@ namespace NumericalMethods {
 			this->locerr_accuracy_label->Name = L"locerr_accuracy_label";
 			this->locerr_accuracy_label->Size = System::Drawing::Size(114, 26);
 			this->locerr_accuracy_label->TabIndex = 12;
-			this->locerr_accuracy_label->Text = L"Точность локальной погрешности";
+			this->locerr_accuracy_label->Text = L"РўРѕС‡РЅРѕСЃС‚СЊ Р»РѕРєР°Р»СЊРЅРѕР№ РїРѕРіСЂРµС€РЅРѕСЃС‚Рё";
 			this->locerr_accuracy_label->Visible = false;
 			// 
 			// h0_textbox
@@ -398,7 +398,7 @@ namespace NumericalMethods {
 			this->max_number_of_steps_label->Name = L"max_number_of_steps_label";
 			this->max_number_of_steps_label->Size = System::Drawing::Size(150, 13);
 			this->max_number_of_steps_label->TabIndex = 16;
-			this->max_number_of_steps_label->Text = L"Максимальное число шагов";
+			this->max_number_of_steps_label->Text = L"РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ С‡РёСЃР»Рѕ С€Р°РіРѕРІ";
 			// 
 			// right_border_label
 			// 
@@ -407,7 +407,7 @@ namespace NumericalMethods {
 			this->right_border_label->Name = L"right_border_label";
 			this->right_border_label->Size = System::Drawing::Size(89, 13);
 			this->right_border_label->TabIndex = 17;
-			this->right_border_label->Text = L"Правая граница";
+			this->right_border_label->Text = L"РџСЂР°РІР°СЏ РіСЂР°РЅРёС†Р°";
 			// 
 			// right_border_accuracy_label
 			// 
@@ -417,7 +417,7 @@ namespace NumericalMethods {
 			this->right_border_accuracy_label->Name = L"right_border_accuracy_label";
 			this->right_border_accuracy_label->Size = System::Drawing::Size(149, 26);
 			this->right_border_accuracy_label->TabIndex = 18;
-			this->right_border_accuracy_label->Text = L"Точность выхода на правую границу";
+			this->right_border_accuracy_label->Text = L"РўРѕС‡РЅРѕСЃС‚СЊ РІС‹С…РѕРґР° РЅР° РїСЂР°РІСѓСЋ РіСЂР°РЅРёС†Сѓ";
 			// 
 			// max_number_of_steps_textbox
 			// 
@@ -449,7 +449,7 @@ namespace NumericalMethods {
 			this->calculate_button->Name = L"calculate_button";
 			this->calculate_button->Size = System::Drawing::Size(196, 36);
 			this->calculate_button->TabIndex = 22;
-			this->calculate_button->Text = L"Вычислить";
+			this->calculate_button->Text = L"Р’С‹С‡РёСЃР»РёС‚СЊ";
 			this->calculate_button->UseVisualStyleBackColor = true;
 			this->calculate_button->Visible = false;
 			this->calculate_button->Click += gcnew System::EventHandler(this, &MyForm::calculate_button_Click);
@@ -515,7 +515,7 @@ namespace NumericalMethods {
 			// 
 			// locerr_table
 			// 
-			this->locerr_table->HeaderText = L"ОЛП";
+			this->locerr_table->HeaderText = L"РћР›Рџ";
 			this->locerr_table->Name = L"locerr_table";
 			this->locerr_table->Visible = false;
 			// 
@@ -564,7 +564,7 @@ namespace NumericalMethods {
 			this->task_formulation_tab->Padding = System::Windows::Forms::Padding(3);
 			this->task_formulation_tab->Size = System::Drawing::Size(651, 496);
 			this->task_formulation_tab->TabIndex = 0;
-			this->task_formulation_tab->Text = L"Постановка задачи";
+			this->task_formulation_tab->Text = L"РџРѕСЃС‚Р°РЅРѕРІРєР° Р·Р°РґР°С‡Рё";
 			this->task_formulation_tab->UseVisualStyleBackColor = true;
 			// 
 			// task_formulation_picturebox
@@ -583,7 +583,7 @@ namespace NumericalMethods {
 			this->method_tab->Padding = System::Windows::Forms::Padding(3);
 			this->method_tab->Size = System::Drawing::Size(651, 496);
 			this->method_tab->TabIndex = 1;
-			this->method_tab->Text = L"Численный метод";
+			this->method_tab->Text = L"Р§РёСЃР»РµРЅРЅС‹Р№ РјРµС‚РѕРґ";
 			this->method_tab->UseVisualStyleBackColor = true;
 			// 
 			// reference_tab
@@ -600,7 +600,7 @@ namespace NumericalMethods {
 			this->reference_tab->Name = L"reference_tab";
 			this->reference_tab->Size = System::Drawing::Size(651, 496);
 			this->reference_tab->TabIndex = 5;
-			this->reference_tab->Text = L"Справка";
+			this->reference_tab->Text = L"РЎРїСЂР°РІРєР°";
 			this->reference_tab->UseVisualStyleBackColor = true;
 			// 
 			// max_abs_ui_vi_diff_label
@@ -682,7 +682,7 @@ namespace NumericalMethods {
 			this->phase_portrait_tab->Name = L"phase_portrait_tab";
 			this->phase_portrait_tab->Size = System::Drawing::Size(651, 496);
 			this->phase_portrait_tab->TabIndex = 2;
-			this->phase_portrait_tab->Text = L"Фазовый портрет";
+			this->phase_portrait_tab->Text = L"Р¤Р°Р·РѕРІС‹Р№ РїРѕСЂС‚СЂРµС‚";
 			this->phase_portrait_tab->UseVisualStyleBackColor = true;
 			// 
 			// phase_portrait_graphcontrol
@@ -709,7 +709,7 @@ namespace NumericalMethods {
 			this->v_x_graph_tab->Name = L"v_x_graph_tab";
 			this->v_x_graph_tab->Size = System::Drawing::Size(651, 496);
 			this->v_x_graph_tab->TabIndex = 3;
-			this->v_x_graph_tab->Text = L"График v(t)";
+			this->v_x_graph_tab->Text = L"Р“СЂР°С„РёРє v(t)";
 			this->v_x_graph_tab->UseVisualStyleBackColor = true;
 			// 
 			// v_x_graph_graphcontrol
@@ -736,7 +736,7 @@ namespace NumericalMethods {
 			this->w_x_graph_tab->Name = L"w_x_graph_tab";
 			this->w_x_graph_tab->Size = System::Drawing::Size(651, 496);
 			this->w_x_graph_tab->TabIndex = 4;
-			this->w_x_graph_tab->Text = L"График w(t)";
+			this->w_x_graph_tab->Text = L"Р“СЂР°С„РёРє w(t)";
 			this->w_x_graph_tab->UseVisualStyleBackColor = true;
 			// 
 			// w_x_graph_graphcontrol
@@ -838,7 +838,7 @@ namespace NumericalMethods {
 			this->Controls->Add(this->task_selection_label);
 			this->Controls->Add(this->task_selection);
 			this->Name = L"MyForm";
-			this->Text = L"Лабораторная работа №1";
+			this->Text = L"Р›Р°Р±РѕСЂР°С‚РѕСЂРЅР°СЏ СЂР°Р±РѕС‚Р° в„–1";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->data_frame))->EndInit();
 			this->tab_frame->ResumeLayout(false);
 			this->task_formulation_tab->ResumeLayout(false);
@@ -913,24 +913,24 @@ namespace NumericalMethods {
 			phase_portrait_graph->CurveList->Clear();
 			v_x_graph->CurveList->Clear();
 			w_x_graph->CurveList->Clear();
-			// Создадим список точек
+			// РЎРѕР·РґР°РґРёРј СЃРїРёСЃРѕРє С‚РѕС‡РµРє
 			PointPairList^ phase_portrait_pts = gcnew ZedGraph::PointPairList();
 			PointPairList^ v_x_pts = gcnew ZedGraph::PointPairList();
 			PointPairList^ w_x_pts = gcnew ZedGraph::PointPairList();
-			phase_portrait_graph->Title->Text = "График зависимости скороcти от смещения";
-			v_x_graph->Title->Text = "График зависимости смещения от времени";
-			w_x_graph->Title->Text = "График зависимости скорости от времени";
+			phase_portrait_graph->Title->Text = "Р“СЂР°С„РёРє Р·Р°РІРёСЃРёРјРѕСЃС‚Рё СЃРєРѕСЂРѕcС‚Рё РѕС‚ СЃРјРµС‰РµРЅРёСЏ";
+			v_x_graph->Title->Text = "Р“СЂР°С„РёРє Р·Р°РІРёСЃРёРјРѕСЃС‚Рё СЃРјРµС‰РµРЅРёСЏ РѕС‚ РІСЂРµРјРµРЅРё";
+			w_x_graph->Title->Text = "Р“СЂР°С„РёРє Р·Р°РІРёСЃРёРјРѕСЃС‚Рё СЃРєРѕСЂРѕСЃС‚Рё РѕС‚ РІСЂРµРјРµРЅРё";
 
-			phase_portrait_graph->XAxis->Title->Text = "v - смещение";
-			phase_portrait_graph->YAxis->Title->Text = "w - скорость";
+			phase_portrait_graph->XAxis->Title->Text = "v - СЃРјРµС‰РµРЅРёРµ";
+			phase_portrait_graph->YAxis->Title->Text = "w - СЃРєРѕСЂРѕСЃС‚СЊ";
 
-			v_x_graph->XAxis->Title->Text = "х - время";
-			v_x_graph->YAxis->Title->Text = "v - смещение";
+			v_x_graph->XAxis->Title->Text = "С… - РІСЂРµРјСЏ";
+			v_x_graph->YAxis->Title->Text = "v - СЃРјРµС‰РµРЅРёРµ";
 
-			w_x_graph->XAxis->Title->Text = "х - время";
-			w_x_graph->YAxis->Title->Text = "w - скорость";
+			w_x_graph->XAxis->Title->Text = "С… - РІСЂРµРјСЏ";
+			w_x_graph->YAxis->Title->Text = "w - СЃРєРѕСЂРѕСЃС‚СЊ";
 
-			// очистим таблицу
+			// РѕС‡РёСЃС‚РёРј С‚Р°Р±Р»РёС†Сѓ
 			data_frame->Rows->Clear();
 			bool is_locerr_required = is_locerr_required_checkbox->Checked;
 			double epsilon;
@@ -1049,11 +1049,11 @@ namespace NumericalMethods {
 			// create reference
 			number_of_steps_label->Text = "n = " + (i - 1);
 			x_right_border_diff_label->Text = "b-xn = " + (x_max - b - x);
-			max_abs_locerr_label->Text = is_locerr_required ? "max|ОЛП| = " + abs_locerr_max : "";
+			max_abs_locerr_label->Text = is_locerr_required ? "max|РћР›Рџ| = " + abs_locerr_max : "";
 			C1_label->Text = is_locerr_required ? "C1 = " + data_frame->Rows[i - 1]->Cells["C1_table"]->Value : "";
 			C2_label->Text = is_locerr_required ? "C2 = " + data_frame->Rows[i - 1]->Cells["C2_table"]->Value : "";
-			h_max_label->Text = is_locerr_required ? "max(hi) = " + h_max + " при x = " + x_h_max : "";
-			h_min_label->Text = is_locerr_required ? "min(hi) = " + h_min + " при x = " + x_h_min : "";
+			h_max_label->Text = is_locerr_required ? "max(hi) = " + h_max + " РїСЂРё x = " + x_h_max : "";
+			h_min_label->Text = is_locerr_required ? "min(hi) = " + h_min + " РїСЂРё x = " + x_h_min : "";
 			max_abs_ui_vi_diff_label->Text = "";
 
 			tab_frame->SelectTab(tab_frame->Controls->IndexOf(phase_portrait_tab));
@@ -1078,9 +1078,9 @@ namespace NumericalMethods {
 			GraphPane^ phase_portrait_graph = phase_portrait_graphcontrol->GraphPane;
 			phase_portrait_graph->CurveList->Clear();
 			PointPairList^ phase_portrait_pts = gcnew ZedGraph::PointPairList();
-			phase_portrait_graph->Title->Text = "График зависимости смещения от времени";
-			phase_portrait_graph->XAxis->Title->Text = "х - время";
-			phase_portrait_graph->YAxis->Title->Text = "v - смещение";
+			phase_portrait_graph->Title->Text = "Р“СЂР°С„РёРє Р·Р°РІРёСЃРёРјРѕСЃС‚Рё СЃРјРµС‰РµРЅРёСЏ РѕС‚ РІСЂРµРјРµРЅРё";
+			phase_portrait_graph->XAxis->Title->Text = "С… - РІСЂРµРјСЏ";
+			phase_portrait_graph->YAxis->Title->Text = "v - СЃРјРµС‰РµРЅРёРµ";
 
 			data_frame->Rows->Clear();
 			bool is_locerr_required = is_locerr_required_checkbox->Checked;
@@ -1179,11 +1179,11 @@ namespace NumericalMethods {
 			// create reference
 			number_of_steps_label->Text = "n = " + (i - 1);
 			x_right_border_diff_label->Text = "b-xn = " + (x_max - b - x);
-			max_abs_locerr_label->Text = is_locerr_required ? "max|ОЛП| = " + abs_locerr_max : "";
+			max_abs_locerr_label->Text = is_locerr_required ? "max|РћР›Рџ| = " + abs_locerr_max : "";
 			C1_label->Text = is_locerr_required ? "C1 = " + data_frame->Rows[i - 1]->Cells["C1_table"]->Value : "";
 			C2_label->Text = is_locerr_required ? "C2 = " + data_frame->Rows[i - 1]->Cells["C2_table"]->Value : "";
-			h_max_label->Text = is_locerr_required ? "max(hi) = " + h_max + " при x = " + x_h_max : "";
-			h_min_label->Text = is_locerr_required ? "min(hi) = " + h_min + " при x = " + x_h_min : "";
+			h_max_label->Text = is_locerr_required ? "max(hi) = " + h_max + " РїСЂРё x = " + x_h_max : "";
+			h_min_label->Text = is_locerr_required ? "min(hi) = " + h_min + " РїСЂРё x = " + x_h_min : "";
 			max_abs_ui_vi_diff_label->Text = "";
 
 			tab_frame->SelectTab(tab_frame->Controls->IndexOf(phase_portrait_tab));
@@ -1208,9 +1208,9 @@ namespace NumericalMethods {
 			GraphPane^ phase_portrait_graph = phase_portrait_graphcontrol->GraphPane;
 			phase_portrait_graph->CurveList->Clear();
 			PointPairList^ phase_portrait_pts = gcnew ZedGraph::PointPairList();
-			phase_portrait_graph->Title->Text = "График зависимости смещения от времени";
-			phase_portrait_graph->XAxis->Title->Text = "х - время";
-			phase_portrait_graph->YAxis->Title->Text = "v - смещение";
+			phase_portrait_graph->Title->Text = "Р“СЂР°С„РёРє Р·Р°РІРёСЃРёРјРѕСЃС‚Рё СЃРјРµС‰РµРЅРёСЏ РѕС‚ РІСЂРµРјРµРЅРё";
+			phase_portrait_graph->XAxis->Title->Text = "С… - РІСЂРµРјСЏ";
+			phase_portrait_graph->YAxis->Title->Text = "v - СЃРјРµС‰РµРЅРёРµ";
 			
 			data_frame->Rows->Clear();
 			bool is_locerr_required = is_locerr_required_checkbox->Checked;
@@ -1318,11 +1318,11 @@ namespace NumericalMethods {
 			// create reference
 			number_of_steps_label->Text = "n = " + (i-1);
 			x_right_border_diff_label->Text = "b-xn = " + (x_max - b - x);
-			max_abs_locerr_label->Text = is_locerr_required ? "max|ОЛП| = " + abs_locerr_max : "";
+			max_abs_locerr_label->Text = is_locerr_required ? "max|РћР›Рџ| = " + abs_locerr_max : "";
 			C1_label->Text = is_locerr_required ? "C1 = " + data_frame->Rows[i - 1]->Cells["C1_table"]->Value : "";
 			C2_label->Text = is_locerr_required ? "C2 = " + data_frame->Rows[i - 1]->Cells["C2_table"]->Value : "";
-			h_max_label->Text = is_locerr_required ? "max(hi) = " + h_max + " при x = " + x_h_max : "";
-			h_min_label->Text = is_locerr_required ? "min(hi) = " + h_min + " при x = " + x_h_min : "";
+			h_max_label->Text = is_locerr_required ? "max(hi) = " + h_max + " РїСЂРё x = " + x_h_max : "";
+			h_min_label->Text = is_locerr_required ? "min(hi) = " + h_min + " РїСЂРё x = " + x_h_min : "";
 			max_abs_ui_vi_diff_label->Text = is_locerr_required ? "max|ui - vi| = " + ui_vi_abs_diff_max : "";
 
 			tab_frame->SelectTab(tab_frame->Controls->IndexOf(phase_portrait_tab));
