@@ -112,20 +112,20 @@ namespace NumericalMethods {
 	private: System::Windows::Forms::Label^ b_coef_label;
 	private: System::Windows::Forms::TextBox^ textBox9;
 	private: System::Windows::Forms::TextBox^ x0_textbox0;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ i_table;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ x_table;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ vi_table;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ v2i_table;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ vi_v2i_diff_table;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ wi_table;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ w2i_table;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ wi_w2i_diff_table;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ locerr_table;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ hi_table;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ C1_table;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ C2_table;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ui_table;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ui_vi_abs_diff_table;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ i_column;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ x_column;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ vi_column;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ v2i_column;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ vi_v2i_diff_column;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ wi_column;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ w2i_column;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ wi_w2i_diff_column;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ locerr_column;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ hi_column;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ C1_column;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ C2_column;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ui_column;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ui_vi_abs_diff_column;
 	private: System::Windows::Forms::Label^ max_abs_ui_vi_diff_label;
 	private: System::Windows::Forms::Label^ h_min_label;
 	private: System::Windows::Forms::Label^ h_max_label;
@@ -183,20 +183,20 @@ namespace NumericalMethods {
 			this->right_border_accuracy_textbox = (gcnew System::Windows::Forms::TextBox());
 			this->calculate_button = (gcnew System::Windows::Forms::Button());
 			this->data_frame = (gcnew System::Windows::Forms::DataGridView());
-			this->i_table = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->x_table = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->vi_table = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->v2i_table = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->vi_v2i_diff_table = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->wi_table = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->w2i_table = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->wi_w2i_diff_table = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->locerr_table = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->hi_table = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->C1_table = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->C2_table = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->ui_table = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->ui_vi_abs_diff_table = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->i_column = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->x_column = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->vi_column = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->v2i_column = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->vi_v2i_diff_column = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->wi_column = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->w2i_column = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->wi_w2i_diff_column = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->locerr_column = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->hi_column = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->C1_column = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->C2_column = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->ui_column = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->ui_vi_abs_diff_column = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->tab_frame = (gcnew System::Windows::Forms::TabControl());
 			this->task_formulation_tab = (gcnew System::Windows::Forms::TabPage());
 			this->task_formulation_picturebox = (gcnew System::Windows::Forms::PictureBox());
@@ -458,9 +458,9 @@ namespace NumericalMethods {
 			// 
 			this->data_frame->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->data_frame->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(14) {
-				this->i_table,
-					this->x_table, this->vi_table, this->v2i_table, this->vi_v2i_diff_table, this->wi_table, this->w2i_table, this->wi_w2i_diff_table,
-					this->locerr_table, this->hi_table, this->C1_table, this->C2_table, this->ui_table, this->ui_vi_abs_diff_table
+				this->i_column,
+					this->x_column, this->vi_column, this->v2i_column, this->vi_v2i_diff_column, this->wi_column, this->w2i_column, this->wi_w2i_diff_column,
+					this->locerr_column, this->hi_column, this->C1_column, this->C2_column, this->ui_column, this->ui_vi_abs_diff_column
 			});
 			this->data_frame->Location = System::Drawing::Point(29, 147);
 			this->data_frame->Name = L"data_frame";
@@ -468,83 +468,83 @@ namespace NumericalMethods {
 			this->data_frame->TabIndex = 23;
 			this->data_frame->Visible = false;
 			// 
-			// i_table
+			// i_column
 			// 
-			this->i_table->HeaderText = L"i";
-			this->i_table->Name = L"i_table";
-			this->i_table->Width = 50;
+			this->i_column->HeaderText = L"i";
+			this->i_column->Name = L"i_column";
+			this->i_column->Width = 50;
 			// 
-			// x_table
+			// x_column
 			// 
-			this->x_table->HeaderText = L"x";
-			this->x_table->Name = L"x_table";
+			this->x_column->HeaderText = L"x";
+			this->x_column->Name = L"x_column";
 			// 
-			// vi_table
+			// vi_column
 			// 
-			this->vi_table->HeaderText = L"vi";
-			this->vi_table->Name = L"vi_table";
+			this->vi_column->HeaderText = L"vi";
+			this->vi_column->Name = L"vi_column";
 			// 
-			// v2i_table
+			// v2i_column
 			// 
-			this->v2i_table->HeaderText = L"v2i";
-			this->v2i_table->Name = L"v2i_table";
-			this->v2i_table->Visible = false;
+			this->v2i_column->HeaderText = L"v2i";
+			this->v2i_column->Name = L"v2i_column";
+			this->v2i_column->Visible = false;
 			// 
-			// vi_v2i_diff_table
+			// vi_v2i_diff_column
 			// 
-			this->vi_v2i_diff_table->HeaderText = L"vi - v2i";
-			this->vi_v2i_diff_table->Name = L"vi_v2i_diff_table";
-			this->vi_v2i_diff_table->Visible = false;
+			this->vi_v2i_diff_column->HeaderText = L"vi - v2i";
+			this->vi_v2i_diff_column->Name = L"vi_v2i_diff_column";
+			this->vi_v2i_diff_column->Visible = false;
 			// 
-			// wi_table
+			// wi_column
 			// 
-			this->wi_table->HeaderText = L"wi";
-			this->wi_table->Name = L"wi_table";
+			this->wi_column->HeaderText = L"wi";
+			this->wi_column->Name = L"wi_column";
 			// 
-			// w2i_table
+			// w2i_column
 			// 
-			this->w2i_table->HeaderText = L"w2i";
-			this->w2i_table->Name = L"w2i_table";
-			this->w2i_table->Visible = false;
+			this->w2i_column->HeaderText = L"w2i";
+			this->w2i_column->Name = L"w2i_column";
+			this->w2i_column->Visible = false;
 			// 
-			// wi_w2i_diff_table
+			// wi_w2i_diff_column
 			// 
-			this->wi_w2i_diff_table->HeaderText = L"wi - w2i";
-			this->wi_w2i_diff_table->Name = L"wi_w2i_diff_table";
-			this->wi_w2i_diff_table->Visible = false;
+			this->wi_w2i_diff_column->HeaderText = L"wi - w2i";
+			this->wi_w2i_diff_column->Name = L"wi_w2i_diff_column";
+			this->wi_w2i_diff_column->Visible = false;
 			// 
-			// locerr_table
+			// locerr_column
 			// 
-			this->locerr_table->HeaderText = L"ОЛП";
-			this->locerr_table->Name = L"locerr_table";
-			this->locerr_table->Visible = false;
+			this->locerr_column->HeaderText = L"ОЛП";
+			this->locerr_column->Name = L"locerr_column";
+			this->locerr_column->Visible = false;
 			// 
-			// hi_table
+			// hi_column
 			// 
-			this->hi_table->HeaderText = L"hi";
-			this->hi_table->Name = L"hi_table";
+			this->hi_column->HeaderText = L"hi";
+			this->hi_column->Name = L"hi_column";
 			// 
-			// C1_table
+			// C1_column
 			// 
-			this->C1_table->HeaderText = L"C1";
-			this->C1_table->Name = L"C1_table";
-			this->C1_table->Width = 50;
+			this->C1_column->HeaderText = L"C1";
+			this->C1_column->Name = L"C1_column";
+			this->C1_column->Width = 50;
 			// 
-			// C2_table
+			// C2_column
 			// 
-			this->C2_table->HeaderText = L"C2";
-			this->C2_table->Name = L"C2_table";
-			this->C2_table->Width = 50;
+			this->C2_column->HeaderText = L"C2";
+			this->C2_column->Name = L"C2_column";
+			this->C2_column->Width = 50;
 			// 
-			// ui_table
+			// ui_column
 			// 
-			this->ui_table->HeaderText = L"ui";
-			this->ui_table->Name = L"ui_table";
+			this->ui_column->HeaderText = L"ui";
+			this->ui_column->Name = L"ui_column";
 			// 
-			// ui_vi_abs_diff_table
+			// ui_vi_abs_diff_column
 			// 
-			this->ui_vi_abs_diff_table->HeaderText = L"|ui - vi|";
-			this->ui_vi_abs_diff_table->Name = L"ui_vi_abs_diff_table";
+			this->ui_vi_abs_diff_column->HeaderText = L"|ui - vi|";
+			this->ui_vi_abs_diff_column->Name = L"ui_vi_abs_diff_column";
 			// 
 			// tab_frame
 			// 
@@ -856,18 +856,29 @@ namespace NumericalMethods {
 		}
 #pragma endregion
 	private:
+		double get_max_diff_by_abs(const vector<double>& v_, const vector<double>& v)
+		{
+			double max_diff_by_abs = 0;
+			for (int i = 0; i < v_.size(); i++)
+				if (max_diff_by_abs < abs(v_[i] - v[i]))
+					max_diff_by_abs = v_[i] - v[i];
+			return max_diff_by_abs;
+		}
+
 		vector<double> RK4_step(vector<double> (*f)(double, vector<double>), double x, vector<double> v, double h)
 		{
-			vector<double> pt_from_ki(v.size());
+			vector<double> pt_from_ki;
 			auto k1 = f(x, v);
 			for (int i = 0; i < v.size(); i++)
 				pt_from_ki.push_back(v[i] + h * k1[i] / 2);
 
 			auto k2 = f(x + h / 2, pt_from_ki);
+			pt_from_ki.clear();
 			for (int i = 0; i < v.size(); i++)
 				pt_from_ki.push_back(v[i] + h * k2[i] / 2);
 
 			auto k3 = f(x + h / 2, pt_from_ki);
+			pt_from_ki.clear();
 			for (int i = 0; i < v.size(); i++)
 				pt_from_ki.push_back(v[i] + h * k3[i]);
 
@@ -880,27 +891,77 @@ namespace NumericalMethods {
 			return next_v;
 		}
 
-		double get_max_diff_by_abs(vector<double> v_, vector<double> v)
+		bool RK4(
+			vector<double>(*f)(double, vector<double>),
+			double& x,
+			vector<double>& v,
+			double& h,
+			const bool& is_locerr_required,
+			const double& epsilon,
+			vector<double>& next_v2,
+			int& C1,
+			int& C2,
+			double& S
+		)
 		{
-			double max_diff_by_abs = 0;
-			for (int i = 0; i < v_.size(); i++)
-				if (max_diff_by_abs < abs(v_[i] - v[i]))
-					max_diff_by_abs = v_[i] - v[i];
-			return max_diff_by_abs;
+			int p = 4;
+			vector<double> next_v = RK4_step(f, x, v, h);
+			double last_h = h;
+			if (is_locerr_required)
+			{
+				next_v2 = RK4_step(f, x + h / 2, RK4_step(f, x, v, h / 2), h / 2);
+				S = get_max_diff_by_abs(next_v2, next_v) / (pow(2, p) - 1);
+				if (abs(S) > epsilon)
+				{
+					h /= 2;
+					C1++;
+					return false;
+				}
+				else
+				{
+					if (epsilon / pow(2, p + 1) > abs(S))
+					{
+						h *= 2;
+						C2++;
+					}
+				}
+			}
+			x += last_h;
+			v = next_v;
+			return true;
+		}
+
+		void create_reference(int n,
+			const double& x_max,
+			const double& b,
+			const double& x,
+			const bool& is_locerr_required,
+			const double& abs_locerr_max,
+			const double& h_max,
+			const double& x_h_max,
+			const double& h_min,
+			const double& x_h_min,
+			const double& ui_vi_abs_diff_max
+		)
+		{
+			number_of_steps_label->Text = "n = " + n;
+			x_right_border_diff_label->Text = "b-xn = " + (x_max - b - x);
+			max_abs_locerr_label->Text = is_locerr_required ? "max|ОЛП| = " + abs_locerr_max : "";
+			C1_label->Text = is_locerr_required ? "C1 = " + data_frame->Rows[n]->Cells["C1_column"]->Value : "";
+			C2_label->Text = is_locerr_required ? "C2 = " + data_frame->Rows[n]->Cells["C2_column"]->Value : "";
+			h_max_label->Text = is_locerr_required ? "max(hi) = " + h_max + " при x = " + x_h_max : "";
+			h_min_label->Text = is_locerr_required ? "min(hi) = " + h_min + " при x = " + x_h_min : "";
+			max_abs_ui_vi_diff_label->Text = is_locerr_required ? "max|ui - vi| = " + ui_vi_abs_diff_max : "";
 		}
 
 		void main2()
 		{
-			locerr_table->Visible = is_locerr_required_checkbox->Checked;
-			v2i_table->Visible = is_locerr_required_checkbox->Checked;
-			vi_v2i_diff_table->Visible = is_locerr_required_checkbox->Checked;
-			wi_table->Visible = true;
-			w2i_table->Visible = is_locerr_required_checkbox->Checked;
-			wi_w2i_diff_table->Visible = is_locerr_required_checkbox->Checked;
-			ui_table->Visible = false;
-			ui_vi_abs_diff_table->Visible = false;
-			C1_table->Visible = is_locerr_required_checkbox->Checked;
-			C2_table->Visible = is_locerr_required_checkbox->Checked;
+			show_neccecary_columns();
+			wi_column->Visible = true;
+			w2i_column->Visible = is_locerr_required_checkbox->Checked;
+			wi_w2i_diff_column->Visible = is_locerr_required_checkbox->Checked;
+			ui_column->Visible = false;
+			ui_vi_abs_diff_column->Visible = false;
 
 			tab_frame->Controls->Add(reference_tab);
 			tab_frame->Controls->Add(phase_portrait_tab);
@@ -944,7 +1005,6 @@ namespace NumericalMethods {
 			double x_max = Convert::ToDouble(right_border_textbox->Text);
 			double b = Convert::ToDouble(right_border_accuracy_textbox->Text);
 			int i = 1;
-			int p = 4;
 			int C1 = 0;
 			int C2 = 0;
 			double abs_locerr_max = 0;
@@ -953,20 +1013,20 @@ namespace NumericalMethods {
 			double v_min = u;
 			
 			data_frame->Rows->Add();
-			data_frame->Rows[0]->Cells["i_table"]->Value = 0;
-			data_frame->Rows[0]->Cells["x_table"]->Value = x;
-			data_frame->Rows[0]->Cells["vi_table"]->Value = u;
-			data_frame->Rows[0]->Cells["wi_table"]->Value = u_;
-			data_frame->Rows[0]->Cells["hi_table"]->Value = h;
+			data_frame->Rows[0]->Cells["i_column"]->Value = 0;
+			data_frame->Rows[0]->Cells["x_column"]->Value = x;
+			data_frame->Rows[0]->Cells["vi_column"]->Value = u;
+			data_frame->Rows[0]->Cells["wi_column"]->Value = u_;
+			data_frame->Rows[0]->Cells["hi_column"]->Value = h;
 			if (is_locerr_required)
 			{
-				data_frame->Rows[0]->Cells["locerr_table"]->Value = 0.;
-				data_frame->Rows[0]->Cells["v2i_table"]->Value = u;
-				data_frame->Rows[0]->Cells["vi_v2i_diff_table"]->Value = 0.;
-				data_frame->Rows[0]->Cells["w2i_table"]->Value = u_;
-				data_frame->Rows[0]->Cells["wi_w2i_diff_table"]->Value = 0.;
-				data_frame->Rows[0]->Cells["C1_table"]->Value = 0;
-				data_frame->Rows[0]->Cells["C2_table"]->Value = 0;
+				data_frame->Rows[0]->Cells["locerr_column"]->Value = 0.;
+				data_frame->Rows[0]->Cells["v2i_column"]->Value = u;
+				data_frame->Rows[0]->Cells["vi_v2i_diff_column"]->Value = 0.;
+				data_frame->Rows[0]->Cells["w2i_column"]->Value = u_;
+				data_frame->Rows[0]->Cells["wi_w2i_diff_column"]->Value = 0.;
+				data_frame->Rows[0]->Cells["C1_column"]->Value = 0;
+				data_frame->Rows[0]->Cells["C2_column"]->Value = 0;
 				epsilon = Convert::ToDouble(locerr_accuracy_textbox->Text);
 			}
 
@@ -974,45 +1034,26 @@ namespace NumericalMethods {
 
 			while (i - 1 < n && x_max - b > x)
 			{
-				vector<double> next_v = RK4_step(main2_f, x, v, h);
 				vector<double> next_v2;
-				double S, last_h = h;
-				if (is_locerr_required)
-				{
-					next_v2 = RK4_step(main2_f, x + h / 2, RK4_step(main2_f, x, v, h / 2), h / 2);
-					S = get_max_diff_by_abs(next_v2, next_v) / (pow(2, p) - 1);
-					if (abs(S) > epsilon)
-					{
-						h /= 2;
-						C1++;
-						continue;
-					}
-					else
-					{
-						if (epsilon / pow(2, p + 1) > abs(S))
-						{
-							h *= 2;
-							C2++;
-						}
-					}
-				}
-				x += last_h;
-				v = next_v; // next trajectory point
+				double S;
+				auto continue_calculating = RK4(main2_f, x, v, h, is_locerr_required, epsilon, next_v2, C1, C2, S);
+				if (!continue_calculating) continue;
+
 				data_frame->Rows->Add();
-				data_frame->Rows[i]->Cells["i_table"]->Value = i;
-				data_frame->Rows[i]->Cells["x_table"]->Value = x;
-				data_frame->Rows[i]->Cells["vi_table"]->Value = v[0];
-				data_frame->Rows[i]->Cells["wi_table"]->Value = v[1];
-				data_frame->Rows[i]->Cells["hi_table"]->Value = h;
+				data_frame->Rows[i]->Cells["i_column"]->Value = i;
+				data_frame->Rows[i]->Cells["x_column"]->Value = x;
+				data_frame->Rows[i]->Cells["vi_column"]->Value = v[0];
+				data_frame->Rows[i]->Cells["wi_column"]->Value = v[1];
+				data_frame->Rows[i]->Cells["hi_column"]->Value = h;
 				if (is_locerr_required)
 				{
-					data_frame->Rows[i]->Cells["locerr_table"]->Value = S;
-					data_frame->Rows[i]->Cells["v2i_table"]->Value = next_v2[0];
-					data_frame->Rows[i]->Cells["vi_v2i_diff_table"]->Value = v[0] - next_v2[0];
-					data_frame->Rows[i]->Cells["w2i_table"]->Value = next_v2[1];
-					data_frame->Rows[i]->Cells["wi_w2i_diff_table"]->Value = v[1] - next_v2[1];
-					data_frame->Rows[i]->Cells["C1_table"]->Value = C1;
-					data_frame->Rows[i]->Cells["C2_table"]->Value = C2;
+					data_frame->Rows[i]->Cells["locerr_column"]->Value = S;
+					data_frame->Rows[i]->Cells["v2i_column"]->Value = next_v2[0];
+					data_frame->Rows[i]->Cells["vi_v2i_diff_column"]->Value = v[0] - next_v2[0];
+					data_frame->Rows[i]->Cells["w2i_column"]->Value = next_v2[1];
+					data_frame->Rows[i]->Cells["wi_w2i_diff_column"]->Value = v[1] - next_v2[1];
+					data_frame->Rows[i]->Cells["C1_column"]->Value = C1;
+					data_frame->Rows[i]->Cells["C2_column"]->Value = C2;
 				}
 				phase_portrait_pts->Add(v[0], v[1]);
 				v_x_pts->Add(x, v[0]);
@@ -1037,40 +1078,28 @@ namespace NumericalMethods {
 			v_x_graph->AddCurve("v(x)", v_x_pts, Color::Red, SymbolType::None);
 			w_x_graph->AddCurve("w(x)", w_x_pts, Color::Red, SymbolType::None);
 			phase_portrait_graph->XAxis->Scale->Min = v_min;
-			v_x_graph->XAxis->Scale->Min = Convert::ToDouble(data_frame->Rows[0]->Cells["x_table"]->Value);
-			w_x_graph->XAxis->Scale->Min = Convert::ToDouble(data_frame->Rows[0]->Cells["x_table"]->Value);
-			phase_portrait_graphcontrol->AxisChange();
+			v_x_graph->XAxis->Scale->Min = Convert::ToDouble(data_frame->Rows[0]->Cells["x_column"]->Value);
+			w_x_graph->XAxis->Scale->Min = Convert::ToDouble(data_frame->Rows[0]->Cells["x_column"]->Value);
+			/*phase_portrait_graphcontrol->AxisChange();
 			v_x_graph_graphcontrol->AxisChange();
-			w_x_graph_graphcontrol->AxisChange();
+			w_x_graph_graphcontrol->AxisChange();*/
 			phase_portrait_graphcontrol->Invalidate();
 			v_x_graph_graphcontrol->Invalidate();
 			w_x_graph_graphcontrol->Invalidate();
 
-			// create reference
-			number_of_steps_label->Text = "n = " + (i - 1);
-			x_right_border_diff_label->Text = "b-xn = " + (x_max - b - x);
-			max_abs_locerr_label->Text = is_locerr_required ? "max|ОЛП| = " + abs_locerr_max : "";
-			C1_label->Text = is_locerr_required ? "C1 = " + data_frame->Rows[i - 1]->Cells["C1_table"]->Value : "";
-			C2_label->Text = is_locerr_required ? "C2 = " + data_frame->Rows[i - 1]->Cells["C2_table"]->Value : "";
-			h_max_label->Text = is_locerr_required ? "max(hi) = " + h_max + " при x = " + x_h_max : "";
-			h_min_label->Text = is_locerr_required ? "min(hi) = " + h_min + " при x = " + x_h_min : "";
-			max_abs_ui_vi_diff_label->Text = "";
+			create_reference(i - 1, x_max, b, x, is_locerr_required, abs_locerr_max, h_max, x_h_max, h_min, x_h_min, NULL);
 
 			tab_frame->SelectTab(tab_frame->Controls->IndexOf(phase_portrait_tab));
 		}
 
 		void main1()
 		{
-			locerr_table->Visible = is_locerr_required_checkbox->Checked;
-			v2i_table->Visible = is_locerr_required_checkbox->Checked;
-			vi_v2i_diff_table->Visible = is_locerr_required_checkbox->Checked;
-			wi_table->Visible = false;
-			w2i_table->Visible = false;
-			wi_w2i_diff_table->Visible = false;
-			ui_table->Visible = false;
-			ui_vi_abs_diff_table->Visible = false;
-			C1_table->Visible = is_locerr_required_checkbox->Checked;
-			C2_table->Visible = is_locerr_required_checkbox->Checked;
+			show_neccecary_columns();
+			wi_column->Visible = false;
+			w2i_column->Visible = false;
+			wi_w2i_diff_column->Visible = false;
+			ui_column->Visible = false;
+			ui_vi_abs_diff_column->Visible = false;
 
 			tab_frame->Controls->Add(reference_tab);
 			tab_frame->Controls->Add(phase_portrait_tab);
@@ -1100,17 +1129,17 @@ namespace NumericalMethods {
 			double x_h_max, x_h_min;
 
 			data_frame->Rows->Add();
-			data_frame->Rows[0]->Cells["i_table"]->Value = 0;
-			data_frame->Rows[0]->Cells["x_table"]->Value = x;
-			data_frame->Rows[0]->Cells["vi_table"]->Value = u;
-			data_frame->Rows[0]->Cells["hi_table"]->Value = h;
+			data_frame->Rows[0]->Cells["i_column"]->Value = 0;
+			data_frame->Rows[0]->Cells["x_column"]->Value = x;
+			data_frame->Rows[0]->Cells["vi_column"]->Value = u;
+			data_frame->Rows[0]->Cells["hi_column"]->Value = h;
 			if (is_locerr_required)
 			{
-				data_frame->Rows[0]->Cells["locerr_table"]->Value = 0.;
-				data_frame->Rows[0]->Cells["v2i_table"]->Value = u;
-				data_frame->Rows[0]->Cells["vi_v2i_diff_table"]->Value = 0.;
-				data_frame->Rows[0]->Cells["C1_table"]->Value = 0;
-				data_frame->Rows[0]->Cells["C2_table"]->Value = 0;
+				data_frame->Rows[0]->Cells["locerr_column"]->Value = 0.;
+				data_frame->Rows[0]->Cells["v2i_column"]->Value = u;
+				data_frame->Rows[0]->Cells["vi_v2i_diff_column"]->Value = 0.;
+				data_frame->Rows[0]->Cells["C1_column"]->Value = 0;
+				data_frame->Rows[0]->Cells["C2_column"]->Value = 0;
 				epsilon = Convert::ToDouble(locerr_accuracy_textbox->Text);
 			}
 
@@ -1118,42 +1147,23 @@ namespace NumericalMethods {
 
 			while (i - 1 < n && x_max - b > x)
 			{
-				vector<double> next_v = RK4_step(main1_f, x, v, h);
 				vector<double> next_v2;
-				double S, last_h = h;
-				if (is_locerr_required)
-				{
-					next_v2 = RK4_step(main1_f, x + h / 2, RK4_step(main1_f, x, v, h / 2), h / 2);
-					S = (next_v2[0] - next_v[0]) / (pow(2, p) - 1);
-					if (abs(S) > epsilon)
-					{
-						h /= 2;
-						C1++;
-						continue;
-					}
-					else
-					{
-						if (epsilon / pow(2, p + 1) > abs(S))
-						{
-							h *= 2;
-							C2++;
-						}
-					}
-				}
-				x += last_h;
-				v = next_v; // next trajectory point
+				double S;
+				auto continue_calculating = RK4(main1_f, x, v, h, is_locerr_required, epsilon, next_v2, C1, C2, S);
+				if (!continue_calculating) continue;
+
 				data_frame->Rows->Add();
-				data_frame->Rows[i]->Cells["i_table"]->Value = i;
-				data_frame->Rows[i]->Cells["x_table"]->Value = x;
-				data_frame->Rows[i]->Cells["vi_table"]->Value = v[0];
-				data_frame->Rows[i]->Cells["hi_table"]->Value = h;
+				data_frame->Rows[i]->Cells["i_column"]->Value = i;
+				data_frame->Rows[i]->Cells["x_column"]->Value = x;
+				data_frame->Rows[i]->Cells["vi_column"]->Value = v[0];
+				data_frame->Rows[i]->Cells["hi_column"]->Value = h;
 				if (is_locerr_required)
 				{
-					data_frame->Rows[i]->Cells["locerr_table"]->Value = S;
-					data_frame->Rows[i]->Cells["v2i_table"]->Value = next_v2[0];
-					data_frame->Rows[i]->Cells["vi_v2i_diff_table"]->Value = v[0] - next_v2[0];
-					data_frame->Rows[i]->Cells["C1_table"]->Value = C1;
-					data_frame->Rows[i]->Cells["C2_table"]->Value = C2;
+					data_frame->Rows[i]->Cells["locerr_column"]->Value = S;
+					data_frame->Rows[i]->Cells["v2i_column"]->Value = next_v2[0];
+					data_frame->Rows[i]->Cells["vi_v2i_diff_column"]->Value = v[0] - next_v2[0];
+					data_frame->Rows[i]->Cells["C1_column"]->Value = C1;
+					data_frame->Rows[i]->Cells["C2_column"]->Value = C2;
 				}
 				phase_portrait_pts->Add(x, v[0]);
 
@@ -1172,35 +1182,23 @@ namespace NumericalMethods {
 			}
 
 			phase_portrait_graph->AddCurve("v(x)", phase_portrait_pts, Color::Red, SymbolType::None);
-			phase_portrait_graph->XAxis->Scale->Min = Convert::ToDouble(data_frame->Rows[0]->Cells["x_table"]->Value);
-			phase_portrait_graphcontrol->AxisChange();
+			phase_portrait_graph->XAxis->Scale->Min = Convert::ToDouble(data_frame->Rows[0]->Cells["x_column"]->Value);
+			//phase_portrait_graphcontrol->AxisChange();
 			phase_portrait_graphcontrol->Invalidate();
 
-			// create reference
-			number_of_steps_label->Text = "n = " + (i - 1);
-			x_right_border_diff_label->Text = "b-xn = " + (x_max - b - x);
-			max_abs_locerr_label->Text = is_locerr_required ? "max|ОЛП| = " + abs_locerr_max : "";
-			C1_label->Text = is_locerr_required ? "C1 = " + data_frame->Rows[i - 1]->Cells["C1_table"]->Value : "";
-			C2_label->Text = is_locerr_required ? "C2 = " + data_frame->Rows[i - 1]->Cells["C2_table"]->Value : "";
-			h_max_label->Text = is_locerr_required ? "max(hi) = " + h_max + " при x = " + x_h_max : "";
-			h_min_label->Text = is_locerr_required ? "min(hi) = " + h_min + " при x = " + x_h_min : "";
-			max_abs_ui_vi_diff_label->Text = "";
+			create_reference(i - 1, x_max, b, x, is_locerr_required, abs_locerr_max, h_max, x_h_max, h_min, x_h_min, NULL);
 
 			tab_frame->SelectTab(tab_frame->Controls->IndexOf(phase_portrait_tab));
 		}
 
 		void test()
 		{
-			locerr_table->Visible = is_locerr_required_checkbox->Checked;
-			v2i_table->Visible = is_locerr_required_checkbox->Checked;
-			vi_v2i_diff_table->Visible = is_locerr_required_checkbox->Checked;
-			wi_table->Visible = false;
-			w2i_table->Visible = false;
-			wi_w2i_diff_table->Visible = false;
-			ui_table->Visible = true;
-			ui_vi_abs_diff_table->Visible = true;
-			C1_table->Visible = is_locerr_required_checkbox->Checked;
-			C2_table->Visible = is_locerr_required_checkbox->Checked;
+			show_neccecary_columns();
+			wi_column->Visible = false;
+			w2i_column->Visible = false;
+			wi_w2i_diff_column->Visible = false;
+			ui_column->Visible = true;
+			ui_vi_abs_diff_column->Visible = true;
 
 			tab_frame->Controls->Add(reference_tab);
 			tab_frame->Controls->Add(phase_portrait_tab);
@@ -1231,19 +1229,19 @@ namespace NumericalMethods {
 			double ui_vi_abs_diff_max = 0;
 
 			data_frame->Rows->Add();
-			data_frame->Rows[0]->Cells["i_table"]->Value = 0;
-			data_frame->Rows[0]->Cells["x_table"]->Value = x;
-			data_frame->Rows[0]->Cells["vi_table"]->Value = u;
-			data_frame->Rows[0]->Cells["hi_table"]->Value = h;
-			data_frame->Rows[0]->Cells["ui_table"]->Value = u;
-			data_frame->Rows[0]->Cells["ui_vi_abs_diff_table"]->Value = 0.;
+			data_frame->Rows[0]->Cells["i_column"]->Value = 0;
+			data_frame->Rows[0]->Cells["x_column"]->Value = x;
+			data_frame->Rows[0]->Cells["vi_column"]->Value = u;
+			data_frame->Rows[0]->Cells["hi_column"]->Value = h;
+			data_frame->Rows[0]->Cells["ui_column"]->Value = u;
+			data_frame->Rows[0]->Cells["ui_vi_abs_diff_column"]->Value = 0.;
 			if (is_locerr_required)
 			{
-				data_frame->Rows[0]->Cells["locerr_table"]->Value = 0.;
-				data_frame->Rows[0]->Cells["v2i_table"]->Value = u;
-				data_frame->Rows[0]->Cells["vi_v2i_diff_table"]->Value = 0.;
-				data_frame->Rows[0]->Cells["C1_table"]->Value = 0;
-				data_frame->Rows[0]->Cells["C2_table"]->Value = 0;
+				data_frame->Rows[0]->Cells["locerr_column"]->Value = 0.;
+				data_frame->Rows[0]->Cells["v2i_column"]->Value = u;
+				data_frame->Rows[0]->Cells["vi_v2i_diff_column"]->Value = 0.;
+				data_frame->Rows[0]->Cells["C1_column"]->Value = 0;
+				data_frame->Rows[0]->Cells["C2_column"]->Value = 0;
 				epsilon = Convert::ToDouble(locerr_accuracy_textbox->Text);
 			}
 
@@ -1253,45 +1251,27 @@ namespace NumericalMethods {
 
 			while (i - 1 < n && x_max - b > x)
 			{
-				vector<double> next_v = RK4_step(test_f, x, v, h);
 				vector<double> next_v2;
-				double S, last_h = h;
-				if (is_locerr_required)
-				{
-					next_v2 = RK4_step(test_f, x + h / 2, RK4_step(test_f, x, v, h / 2), h / 2);
-					S = (next_v2[0] - next_v[0]) / (pow(2, p) - 1);
-					if (abs(S) > epsilon)
-					{
-						h /= 2;
-						C1++;
-						continue;
-					}
-					else
-					{
-						if (epsilon / pow(2, p + 1) > abs(S))
-						{
-							h *= 2;
-							C2++;
-						}
-					}
-				}
-				x += last_h;
+				double S;
+				auto continue_calculating = RK4(test_f, x, v, h, is_locerr_required, epsilon, next_v2, C1, C2, S);
+				if (!continue_calculating) continue;
+
 				u = sol(x);
-				v = next_v; // next trajectory point
+
 				data_frame->Rows->Add();
-				data_frame->Rows[i]->Cells["i_table"]->Value = i;
-				data_frame->Rows[i]->Cells["x_table"]->Value = x;
-				data_frame->Rows[i]->Cells["vi_table"]->Value = v[0];
-				data_frame->Rows[i]->Cells["hi_table"]->Value = h;
-				data_frame->Rows[i]->Cells["ui_table"]->Value = u;
-				data_frame->Rows[i]->Cells["ui_vi_abs_diff_table"]->Value = abs(u - v[0]);
+				data_frame->Rows[i]->Cells["i_column"]->Value = i;
+				data_frame->Rows[i]->Cells["x_column"]->Value = x;
+				data_frame->Rows[i]->Cells["vi_column"]->Value = v[0];
+				data_frame->Rows[i]->Cells["hi_column"]->Value = h;
+				data_frame->Rows[i]->Cells["ui_column"]->Value = u;
+				data_frame->Rows[i]->Cells["ui_vi_abs_diff_column"]->Value = abs(u - v[0]);
 				if (is_locerr_required)
 				{
-					data_frame->Rows[i]->Cells["locerr_table"]->Value = S;
-					data_frame->Rows[i]->Cells["v2i_table"]->Value = next_v2[0];
-					data_frame->Rows[i]->Cells["vi_v2i_diff_table"]->Value = v[0] - next_v2[0];
-					data_frame->Rows[i]->Cells["C1_table"]->Value = C1;
-					data_frame->Rows[i]->Cells["C2_table"]->Value = C2;
+					data_frame->Rows[i]->Cells["locerr_column"]->Value = S;
+					data_frame->Rows[i]->Cells["v2i_column"]->Value = next_v2[0];
+					data_frame->Rows[i]->Cells["vi_v2i_diff_column"]->Value = v[0] - next_v2[0];
+					data_frame->Rows[i]->Cells["C1_column"]->Value = C1;
+					data_frame->Rows[i]->Cells["C2_column"]->Value = C2;
 				}
 				phase_portrait_pts->Add(x, v[0]);
 
@@ -1311,19 +1291,11 @@ namespace NumericalMethods {
 			}
 
 			phase_portrait_graph->AddCurve("v(x)", phase_portrait_pts, Color::Red, SymbolType::None);
-			phase_portrait_graph->XAxis->Scale->Min = Convert::ToDouble(data_frame->Rows[0]->Cells["x_table"]->Value);
-			phase_portrait_graphcontrol->AxisChange();
+			phase_portrait_graph->XAxis->Scale->Min = Convert::ToDouble(data_frame->Rows[0]->Cells["x_column"]->Value);
+			//phase_portrait_graphcontrol->AxisChange();
 			phase_portrait_graphcontrol->Invalidate();
 
-			// create reference
-			number_of_steps_label->Text = "n = " + (i-1);
-			x_right_border_diff_label->Text = "b-xn = " + (x_max - b - x);
-			max_abs_locerr_label->Text = is_locerr_required ? "max|ОЛП| = " + abs_locerr_max : "";
-			C1_label->Text = is_locerr_required ? "C1 = " + data_frame->Rows[i - 1]->Cells["C1_table"]->Value : "";
-			C2_label->Text = is_locerr_required ? "C2 = " + data_frame->Rows[i - 1]->Cells["C2_table"]->Value : "";
-			h_max_label->Text = is_locerr_required ? "max(hi) = " + h_max + " при x = " + x_h_max : "";
-			h_min_label->Text = is_locerr_required ? "min(hi) = " + h_min + " при x = " + x_h_min : "";
-			max_abs_ui_vi_diff_label->Text = is_locerr_required ? "max|ui - vi| = " + ui_vi_abs_diff_max : "";
+			create_reference(i - 1, x_max, b, x, is_locerr_required, abs_locerr_max, h_max, x_h_max, h_min, x_h_min, ui_vi_abs_diff_max);
 
 			tab_frame->SelectTab(tab_frame->Controls->IndexOf(phase_portrait_tab));
 		}
@@ -1334,6 +1306,15 @@ namespace NumericalMethods {
 			tab_frame->Controls->Remove(phase_portrait_tab);
 			tab_frame->Controls->Remove(v_x_graph_tab);
 			tab_frame->Controls->Remove(w_x_graph_tab);
+		}
+
+		void show_neccecary_columns()
+		{
+			locerr_column->Visible = is_locerr_required_checkbox->Checked;
+			v2i_column->Visible = is_locerr_required_checkbox->Checked;
+			vi_v2i_diff_column->Visible = is_locerr_required_checkbox->Checked;
+			C1_column->Visible = is_locerr_required_checkbox->Checked;
+			C2_column->Visible = is_locerr_required_checkbox->Checked;
 		}
 
 	private: System::Void task_selection_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -1362,6 +1343,7 @@ namespace NumericalMethods {
 		case 1: task_formulation_picturebox->Image = Image::FromFile(".\\images\\main1.jpg"); break;
 		case 2: task_formulation_picturebox->Image = Image::FromFile(".\\images\\main2.jpg"); break;
 		}
+
 		remove_unnecessary_tabs();
 		tab_frame->SelectTab(tab_frame->Controls->IndexOf(task_formulation_tab));
 		data_frame->Visible = false;
