@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include <vector>
+#include <cmath>
 
 namespace NumericalMethods {
 	using namespace System;
@@ -16,20 +17,20 @@ namespace NumericalMethods {
 	vector<double> test_f(double x, vector<double> v)
 	{
 		return vector<double>{
-			(-1) * 5 / 2 * v[0] // du/dx
+			-5.0 * v[0] / 2.0  // du/dx = (-1) * 5 / 2 * v[0] 
 		};
 	}
 	auto get_test_sol(double C)
 	{
 		return [C](double x) {
-			return C * exp(-5 * x / 2);
+			return C * exp(-5.0 * x / 2.0);
 		};
 	}
 
 	vector<double> main1_f(double x, vector<double> v)
 	{
 		return vector<double>{
-			log(x + 1)* pow(v[0], 2) / (pow(x, 2) + 1) + v[0] - pow(v[0], 3) * sin(10 * x)
+			log(x + 1.0)* pow(v[0], 2) / (pow(x, 2) + 1.0) + v[0] - pow(v[0], 3) * sin(10.0 * x)
 		};
 	}
 
@@ -112,6 +113,29 @@ namespace NumericalMethods {
 	private: System::Windows::Forms::Label^ b_coef_label;
 	private: System::Windows::Forms::TextBox^ textBox9;
 	private: System::Windows::Forms::TextBox^ x0_textbox0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	private: System::Windows::Forms::Label^ max_abs_ui_vi_diff_label;
+	private: System::Windows::Forms::Label^ h_min_label;
+	private: System::Windows::Forms::Label^ h_max_label;
+	private: System::Windows::Forms::Label^ C2_label;
+	private: System::Windows::Forms::Label^ C1_label;
+	private: System::Windows::Forms::Label^ max_abs_locerr_label;
+	private: System::Windows::Forms::Label^ x_right_border_diff_label;
+	private: System::Windows::Forms::Label^ number_of_steps_label;
+	private: System::Windows::Forms::PictureBox^ method_description_picturebox;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ i_column;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ x_column;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ vi_column;
@@ -126,15 +150,6 @@ namespace NumericalMethods {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ C2_column;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ui_column;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ui_vi_abs_diff_column;
-	private: System::Windows::Forms::Label^ max_abs_ui_vi_diff_label;
-	private: System::Windows::Forms::Label^ h_min_label;
-	private: System::Windows::Forms::Label^ h_max_label;
-	private: System::Windows::Forms::Label^ C2_label;
-	private: System::Windows::Forms::Label^ C1_label;
-	private: System::Windows::Forms::Label^ max_abs_locerr_label;
-	private: System::Windows::Forms::Label^ x_right_border_diff_label;
-	private: System::Windows::Forms::Label^ number_of_steps_label;
-	private: System::Windows::Forms::PictureBox^ method_description_picturebox;
 
 
 
@@ -201,6 +216,7 @@ namespace NumericalMethods {
 			this->task_formulation_tab = (gcnew System::Windows::Forms::TabPage());
 			this->task_formulation_picturebox = (gcnew System::Windows::Forms::PictureBox());
 			this->method_tab = (gcnew System::Windows::Forms::TabPage());
+			this->method_description_picturebox = (gcnew System::Windows::Forms::PictureBox());
 			this->reference_tab = (gcnew System::Windows::Forms::TabPage());
 			this->max_abs_ui_vi_diff_label = (gcnew System::Windows::Forms::Label());
 			this->h_min_label = (gcnew System::Windows::Forms::Label());
@@ -220,23 +236,25 @@ namespace NumericalMethods {
 			this->b_coef_label = (gcnew System::Windows::Forms::Label());
 			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
 			this->x0_textbox0 = (gcnew System::Windows::Forms::TextBox());
-			this->method_description_picturebox = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->data_frame))->BeginInit();
 			this->tab_frame->SuspendLayout();
 			this->task_formulation_tab->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->task_formulation_picturebox))->BeginInit();
 			this->method_tab->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->method_description_picturebox))->BeginInit();
 			this->reference_tab->SuspendLayout();
 			this->phase_portrait_tab->SuspendLayout();
 			this->v_x_graph_tab->SuspendLayout();
 			this->w_x_graph_tab->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->method_description_picturebox))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// task_selection
 			// 
 			this->task_selection->FormattingEnabled = true;
-			this->task_selection->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Тестовая задача (5)", L"Основная задача 1", L"Основная задача 2" });
+			this->task_selection->Items->AddRange(gcnew cli::array< System::Object^  >(3) {
+				L"Тестовая задача (5)", L"Основная задача 1",
+					L"Основная задача 2"
+			});
 			this->task_selection->Location = System::Drawing::Point(29, 25);
 			this->task_selection->Name = L"task_selection";
 			this->task_selection->Size = System::Drawing::Size(196, 21);
@@ -246,8 +264,8 @@ namespace NumericalMethods {
 			// task_selection_label
 			// 
 			this->task_selection_label->AutoSize = true;
-			this->task_selection_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
+			this->task_selection_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->task_selection_label->Location = System::Drawing::Point(26, 9);
 			this->task_selection_label->Name = L"task_selection_label";
 			this->task_selection_label->Size = System::Drawing::Size(90, 13);
@@ -259,7 +277,7 @@ namespace NumericalMethods {
 			this->task_params_label->AutoSize = true;
 			this->task_params_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->task_params_label->Location = System::Drawing::Point(279, 9);
+			this->task_params_label->Location = System::Drawing::Point(559, 13);
 			this->task_params_label->Name = L"task_params_label";
 			this->task_params_label->Size = System::Drawing::Size(155, 13);
 			this->task_params_label->TabIndex = 2;
@@ -268,7 +286,7 @@ namespace NumericalMethods {
 			// x0_label
 			// 
 			this->x0_label->AutoSize = true;
-			this->x0_label->Location = System::Drawing::Point(279, 25);
+			this->x0_label->Location = System::Drawing::Point(559, 29);
 			this->x0_label->MaximumSize = System::Drawing::Size(25, 15);
 			this->x0_label->MinimumSize = System::Drawing::Size(25, 15);
 			this->x0_label->Name = L"x0_label";
@@ -279,7 +297,7 @@ namespace NumericalMethods {
 			// u0_label
 			// 
 			this->u0_label->AutoSize = true;
-			this->u0_label->Location = System::Drawing::Point(279, 64);
+			this->u0_label->Location = System::Drawing::Point(559, 68);
 			this->u0_label->MaximumSize = System::Drawing::Size(25, 15);
 			this->u0_label->MinimumSize = System::Drawing::Size(25, 15);
 			this->u0_label->Name = L"u0_label";
@@ -290,7 +308,7 @@ namespace NumericalMethods {
 			// w0_label
 			// 
 			this->w0_label->AutoSize = true;
-			this->w0_label->Location = System::Drawing::Point(279, 105);
+			this->w0_label->Location = System::Drawing::Point(559, 109);
 			this->w0_label->MaximumSize = System::Drawing::Size(25, 15);
 			this->w0_label->MinimumSize = System::Drawing::Size(25, 15);
 			this->w0_label->Name = L"w0_label";
@@ -300,7 +318,7 @@ namespace NumericalMethods {
 			// 
 			// x0_textbox
 			// 
-			this->x0_textbox->Location = System::Drawing::Point(334, 26);
+			this->x0_textbox->Location = System::Drawing::Point(614, 30);
 			this->x0_textbox->Name = L"x0_textbox";
 			this->x0_textbox->Size = System::Drawing::Size(100, 20);
 			this->x0_textbox->TabIndex = 6;
@@ -308,26 +326,26 @@ namespace NumericalMethods {
 			// 
 			// u0_textbox
 			// 
-			this->u0_textbox->Location = System::Drawing::Point(334, 64);
+			this->u0_textbox->Location = System::Drawing::Point(614, 68);
 			this->u0_textbox->Name = L"u0_textbox";
 			this->u0_textbox->Size = System::Drawing::Size(100, 20);
 			this->u0_textbox->TabIndex = 7;
-			this->u0_textbox->Text = L"1";
+			this->u0_textbox->Text = L"1,5";
 			// 
 			// w0_textbox
 			// 
-			this->w0_textbox->Location = System::Drawing::Point(334, 102);
+			this->w0_textbox->Location = System::Drawing::Point(614, 106);
 			this->w0_textbox->Name = L"w0_textbox";
 			this->w0_textbox->Size = System::Drawing::Size(100, 20);
 			this->w0_textbox->TabIndex = 8;
-			this->w0_textbox->Text = L"2";
+			this->w0_textbox->Text = L"3";
 			// 
 			// method_params_label
 			// 
 			this->method_params_label->AutoSize = true;
-			this->method_params_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->method_params_label->Location = System::Drawing::Point(489, 9);
+			this->method_params_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->method_params_label->Location = System::Drawing::Point(775, 13);
 			this->method_params_label->Name = L"method_params_label";
 			this->method_params_label->Size = System::Drawing::Size(122, 13);
 			this->method_params_label->TabIndex = 9;
@@ -336,7 +354,7 @@ namespace NumericalMethods {
 			// h0_label
 			// 
 			this->h0_label->AutoSize = true;
-			this->h0_label->Location = System::Drawing::Point(489, 25);
+			this->h0_label->Location = System::Drawing::Point(775, 29);
 			this->h0_label->Name = L"h0_label";
 			this->h0_label->Size = System::Drawing::Size(86, 13);
 			this->h0_label->TabIndex = 10;
@@ -345,27 +363,27 @@ namespace NumericalMethods {
 			// is_locerr_required_label
 			// 
 			this->is_locerr_required_label->AutoSize = true;
-			this->is_locerr_required_label->Location = System::Drawing::Point(489, 64);
+			this->is_locerr_required_label->Location = System::Drawing::Point(775, 68);
 			this->is_locerr_required_label->MaximumSize = System::Drawing::Size(150, 0);
 			this->is_locerr_required_label->Name = L"is_locerr_required_label";
-			this->is_locerr_required_label->Size = System::Drawing::Size(130, 26);
+			this->is_locerr_required_label->Size = System::Drawing::Size(115, 26);
 			this->is_locerr_required_label->TabIndex = 11;
-			this->is_locerr_required_label->Text = L"Учитывать контроль локальной погрешности";
+			this->is_locerr_required_label->Text = L"Контроль локальной погрешности";
 			// 
 			// locerr_accuracy_label
 			// 
 			this->locerr_accuracy_label->AutoSize = true;
-			this->locerr_accuracy_label->Location = System::Drawing::Point(489, 107);
+			this->locerr_accuracy_label->Location = System::Drawing::Point(775, 111);
 			this->locerr_accuracy_label->MaximumSize = System::Drawing::Size(150, 0);
 			this->locerr_accuracy_label->Name = L"locerr_accuracy_label";
-			this->locerr_accuracy_label->Size = System::Drawing::Size(114, 26);
+			this->locerr_accuracy_label->Size = System::Drawing::Size(118, 26);
 			this->locerr_accuracy_label->TabIndex = 12;
-			this->locerr_accuracy_label->Text = L"Точность локальной погрешности";
+			this->locerr_accuracy_label->Text = L"Параметр локальной погрешности (ε)";
 			this->locerr_accuracy_label->Visible = false;
 			// 
 			// h0_textbox
 			// 
-			this->h0_textbox->Location = System::Drawing::Point(650, 26);
+			this->h0_textbox->Location = System::Drawing::Point(936, 30);
 			this->h0_textbox->Name = L"h0_textbox";
 			this->h0_textbox->Size = System::Drawing::Size(100, 20);
 			this->h0_textbox->TabIndex = 13;
@@ -374,7 +392,7 @@ namespace NumericalMethods {
 			// is_locerr_required_checkbox
 			// 
 			this->is_locerr_required_checkbox->AutoSize = true;
-			this->is_locerr_required_checkbox->Location = System::Drawing::Point(650, 70);
+			this->is_locerr_required_checkbox->Location = System::Drawing::Point(936, 74);
 			this->is_locerr_required_checkbox->Name = L"is_locerr_required_checkbox";
 			this->is_locerr_required_checkbox->Size = System::Drawing::Size(15, 14);
 			this->is_locerr_required_checkbox->TabIndex = 14;
@@ -383,7 +401,7 @@ namespace NumericalMethods {
 			// 
 			// locerr_accuracy_textbox
 			// 
-			this->locerr_accuracy_textbox->Location = System::Drawing::Point(650, 107);
+			this->locerr_accuracy_textbox->Location = System::Drawing::Point(936, 111);
 			this->locerr_accuracy_textbox->Name = L"locerr_accuracy_textbox";
 			this->locerr_accuracy_textbox->Size = System::Drawing::Size(100, 20);
 			this->locerr_accuracy_textbox->TabIndex = 15;
@@ -393,7 +411,7 @@ namespace NumericalMethods {
 			// max_number_of_steps_label
 			// 
 			this->max_number_of_steps_label->AutoSize = true;
-			this->max_number_of_steps_label->Location = System::Drawing::Point(816, 25);
+			this->max_number_of_steps_label->Location = System::Drawing::Point(1102, 29);
 			this->max_number_of_steps_label->MaximumSize = System::Drawing::Size(150, 0);
 			this->max_number_of_steps_label->Name = L"max_number_of_steps_label";
 			this->max_number_of_steps_label->Size = System::Drawing::Size(150, 13);
@@ -403,7 +421,7 @@ namespace NumericalMethods {
 			// right_border_label
 			// 
 			this->right_border_label->AutoSize = true;
-			this->right_border_label->Location = System::Drawing::Point(816, 71);
+			this->right_border_label->Location = System::Drawing::Point(1102, 75);
 			this->right_border_label->Name = L"right_border_label";
 			this->right_border_label->Size = System::Drawing::Size(89, 13);
 			this->right_border_label->TabIndex = 17;
@@ -412,7 +430,7 @@ namespace NumericalMethods {
 			// right_border_accuracy_label
 			// 
 			this->right_border_accuracy_label->AutoSize = true;
-			this->right_border_accuracy_label->Location = System::Drawing::Point(817, 110);
+			this->right_border_accuracy_label->Location = System::Drawing::Point(1103, 114);
 			this->right_border_accuracy_label->MaximumSize = System::Drawing::Size(150, 0);
 			this->right_border_accuracy_label->Name = L"right_border_accuracy_label";
 			this->right_border_accuracy_label->Size = System::Drawing::Size(149, 26);
@@ -421,15 +439,15 @@ namespace NumericalMethods {
 			// 
 			// max_number_of_steps_textbox
 			// 
-			this->max_number_of_steps_textbox->Location = System::Drawing::Point(999, 26);
+			this->max_number_of_steps_textbox->Location = System::Drawing::Point(1285, 30);
 			this->max_number_of_steps_textbox->Name = L"max_number_of_steps_textbox";
 			this->max_number_of_steps_textbox->Size = System::Drawing::Size(100, 20);
 			this->max_number_of_steps_textbox->TabIndex = 19;
-			this->max_number_of_steps_textbox->Text = L"1000";
+			this->max_number_of_steps_textbox->Text = L"10000";
 			// 
 			// right_border_textbox
 			// 
-			this->right_border_textbox->Location = System::Drawing::Point(999, 71);
+			this->right_border_textbox->Location = System::Drawing::Point(1285, 75);
 			this->right_border_textbox->Name = L"right_border_textbox";
 			this->right_border_textbox->Size = System::Drawing::Size(100, 20);
 			this->right_border_textbox->TabIndex = 20;
@@ -437,7 +455,7 @@ namespace NumericalMethods {
 			// 
 			// right_border_accuracy_textbox
 			// 
-			this->right_border_accuracy_textbox->Location = System::Drawing::Point(999, 110);
+			this->right_border_accuracy_textbox->Location = System::Drawing::Point(1285, 114);
 			this->right_border_accuracy_textbox->Name = L"right_border_accuracy_textbox";
 			this->right_border_accuracy_textbox->Size = System::Drawing::Size(100, 20);
 			this->right_border_accuracy_textbox->TabIndex = 21;
@@ -462,9 +480,9 @@ namespace NumericalMethods {
 					this->x_column, this->vi_column, this->v2i_column, this->vi_v2i_diff_column, this->wi_column, this->w2i_column, this->wi_w2i_diff_column,
 					this->locerr_column, this->hi_column, this->C1_column, this->C2_column, this->ui_column, this->ui_vi_abs_diff_column
 			});
-			this->data_frame->Location = System::Drawing::Point(29, 147);
+			this->data_frame->Location = System::Drawing::Point(29, 151);
 			this->data_frame->Name = L"data_frame";
-			this->data_frame->Size = System::Drawing::Size(458, 522);
+			this->data_frame->Size = System::Drawing::Size(745, 522);
 			this->data_frame->TabIndex = 23;
 			this->data_frame->Visible = false;
 			// 
@@ -515,7 +533,7 @@ namespace NumericalMethods {
 			// 
 			// locerr_column
 			// 
-			this->locerr_column->HeaderText = L"ОЛП";
+			this->locerr_column->HeaderText = L"|ОЛП|";
 			this->locerr_column->Name = L"locerr_column";
 			this->locerr_column->Visible = false;
 			// 
@@ -550,7 +568,7 @@ namespace NumericalMethods {
 			// 
 			this->tab_frame->Controls->Add(this->task_formulation_tab);
 			this->tab_frame->Controls->Add(this->method_tab);
-			this->tab_frame->Location = System::Drawing::Point(494, 147);
+			this->tab_frame->Location = System::Drawing::Point(780, 151);
 			this->tab_frame->Name = L"tab_frame";
 			this->tab_frame->SelectedIndex = 0;
 			this->tab_frame->Size = System::Drawing::Size(659, 522);
@@ -586,6 +604,14 @@ namespace NumericalMethods {
 			this->method_tab->Text = L"Численный метод";
 			this->method_tab->UseVisualStyleBackColor = true;
 			// 
+			// method_description_picturebox
+			// 
+			this->method_description_picturebox->Location = System::Drawing::Point(0, 0);
+			this->method_description_picturebox->Name = L"method_description_picturebox";
+			this->method_description_picturebox->Size = System::Drawing::Size(651, 496);
+			this->method_description_picturebox->TabIndex = 0;
+			this->method_description_picturebox->TabStop = false;
+			// 
 			// reference_tab
 			// 
 			this->reference_tab->Controls->Add(this->max_abs_ui_vi_diff_label);
@@ -608,7 +634,7 @@ namespace NumericalMethods {
 			this->max_abs_ui_vi_diff_label->AutoSize = true;
 			this->max_abs_ui_vi_diff_label->Location = System::Drawing::Point(48, 306);
 			this->max_abs_ui_vi_diff_label->Name = L"max_abs_ui_vi_diff_label";
-			this->max_abs_ui_vi_diff_label->Size = System::Drawing::Size(41, 13);
+			this->max_abs_ui_vi_diff_label->Size = System::Drawing::Size(125, 13);
 			this->max_abs_ui_vi_diff_label->TabIndex = 7;
 			this->max_abs_ui_vi_diff_label->Text = L"max_abs_ui_vi_diff_label";
 			// 
@@ -617,7 +643,7 @@ namespace NumericalMethods {
 			this->h_min_label->AutoSize = true;
 			this->h_min_label->Location = System::Drawing::Point(48, 241);
 			this->h_min_label->Name = L"h_min_label";
-			this->h_min_label->Size = System::Drawing::Size(41, 13);
+			this->h_min_label->Size = System::Drawing::Size(63, 13);
 			this->h_min_label->TabIndex = 6;
 			this->h_min_label->Text = L"h_min_label";
 			// 
@@ -626,7 +652,7 @@ namespace NumericalMethods {
 			this->h_max_label->AutoSize = true;
 			this->h_max_label->Location = System::Drawing::Point(48, 187);
 			this->h_max_label->Name = L"h_max_label";
-			this->h_max_label->Size = System::Drawing::Size(41, 13);
+			this->h_max_label->Size = System::Drawing::Size(66, 13);
 			this->h_max_label->TabIndex = 5;
 			this->h_max_label->Text = L"h_max_label";
 			// 
@@ -635,7 +661,7 @@ namespace NumericalMethods {
 			this->C2_label->AutoSize = true;
 			this->C2_label->Location = System::Drawing::Point(299, 134);
 			this->C2_label->Name = L"C2_label";
-			this->C2_label->Size = System::Drawing::Size(41, 13);
+			this->C2_label->Size = System::Drawing::Size(48, 13);
 			this->C2_label->TabIndex = 4;
 			this->C2_label->Text = L"C2_label";
 			// 
@@ -644,7 +670,7 @@ namespace NumericalMethods {
 			this->C1_label->AutoSize = true;
 			this->C1_label->Location = System::Drawing::Point(48, 134);
 			this->C1_label->Name = L"C1_label";
-			this->C1_label->Size = System::Drawing::Size(41, 13);
+			this->C1_label->Size = System::Drawing::Size(48, 13);
 			this->C1_label->TabIndex = 3;
 			this->C1_label->Text = L"C1_label";
 			// 
@@ -653,7 +679,7 @@ namespace NumericalMethods {
 			this->max_abs_locerr_label->AutoSize = true;
 			this->max_abs_locerr_label->Location = System::Drawing::Point(48, 82);
 			this->max_abs_locerr_label->Name = L"max_abs_locerr_label";
-			this->max_abs_locerr_label->Size = System::Drawing::Size(41, 13);
+			this->max_abs_locerr_label->Size = System::Drawing::Size(109, 13);
 			this->max_abs_locerr_label->TabIndex = 2;
 			this->max_abs_locerr_label->Text = L"max_abs_locerr_label";
 			// 
@@ -662,7 +688,7 @@ namespace NumericalMethods {
 			this->x_right_border_diff_label->AutoSize = true;
 			this->x_right_border_diff_label->Location = System::Drawing::Point(299, 37);
 			this->x_right_border_diff_label->Name = L"x_right_border_diff_label";
-			this->x_right_border_diff_label->Size = System::Drawing::Size(41, 13);
+			this->x_right_border_diff_label->Size = System::Drawing::Size(122, 13);
 			this->x_right_border_diff_label->TabIndex = 1;
 			this->x_right_border_diff_label->Text = L"x_right_border_diff_label";
 			// 
@@ -671,7 +697,7 @@ namespace NumericalMethods {
 			this->number_of_steps_label->AutoSize = true;
 			this->number_of_steps_label->Location = System::Drawing::Point(48, 37);
 			this->number_of_steps_label->Name = L"number_of_steps_label";
-			this->number_of_steps_label->Size = System::Drawing::Size(41, 13);
+			this->number_of_steps_label->Size = System::Drawing::Size(116, 13);
 			this->number_of_steps_label->TabIndex = 0;
 			this->number_of_steps_label->Text = L"number_of_steps_label";
 			// 
@@ -687,8 +713,8 @@ namespace NumericalMethods {
 			// 
 			// phase_portrait_graphcontrol
 			// 
-			this->phase_portrait_graphcontrol->Font = (gcnew System::Drawing::Font(L"Lucida Sans Unicode", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
+			this->phase_portrait_graphcontrol->Font = (gcnew System::Drawing::Font(L"Lucida Sans Unicode", 7.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->phase_portrait_graphcontrol->Location = System::Drawing::Point(-4, 0);
 			this->phase_portrait_graphcontrol->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->phase_portrait_graphcontrol->Name = L"phase_portrait_graphcontrol";
@@ -709,13 +735,13 @@ namespace NumericalMethods {
 			this->v_x_graph_tab->Name = L"v_x_graph_tab";
 			this->v_x_graph_tab->Size = System::Drawing::Size(651, 496);
 			this->v_x_graph_tab->TabIndex = 3;
-			this->v_x_graph_tab->Text = L"График v(t)";
+			this->v_x_graph_tab->Text = L"График v(x)";
 			this->v_x_graph_tab->UseVisualStyleBackColor = true;
 			// 
 			// v_x_graph_graphcontrol
 			// 
-			this->v_x_graph_graphcontrol->Font = (gcnew System::Drawing::Font(L"Lucida Sans Unicode", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
+			this->v_x_graph_graphcontrol->Font = (gcnew System::Drawing::Font(L"Lucida Sans Unicode", 7.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->v_x_graph_graphcontrol->Location = System::Drawing::Point(-4, 0);
 			this->v_x_graph_graphcontrol->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->v_x_graph_graphcontrol->Name = L"v_x_graph_graphcontrol";
@@ -736,13 +762,13 @@ namespace NumericalMethods {
 			this->w_x_graph_tab->Name = L"w_x_graph_tab";
 			this->w_x_graph_tab->Size = System::Drawing::Size(651, 496);
 			this->w_x_graph_tab->TabIndex = 4;
-			this->w_x_graph_tab->Text = L"График w(t)";
+			this->w_x_graph_tab->Text = L"График w(x)";
 			this->w_x_graph_tab->UseVisualStyleBackColor = true;
 			// 
 			// w_x_graph_graphcontrol
 			// 
-			this->w_x_graph_graphcontrol->Font = (gcnew System::Drawing::Font(L"Lucida Sans Unicode", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
+			this->w_x_graph_graphcontrol->Font = (gcnew System::Drawing::Font(L"Lucida Sans Unicode", 7.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->w_x_graph_graphcontrol->Location = System::Drawing::Point(-4, 0);
 			this->w_x_graph_graphcontrol->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->w_x_graph_graphcontrol->Name = L"w_x_graph_graphcontrol";
@@ -782,7 +808,7 @@ namespace NumericalMethods {
 			this->textBox9->Name = L"textBox9";
 			this->textBox9->Size = System::Drawing::Size(100, 20);
 			this->textBox9->TabIndex = 27;
-			this->textBox9->Text = L"1";
+			this->textBox9->Text = L"0,1";
 			this->textBox9->Visible = false;
 			// 
 			// x0_textbox0
@@ -794,20 +820,11 @@ namespace NumericalMethods {
 			this->x0_textbox0->Text = L"1";
 			this->x0_textbox0->Visible = false;
 			// 
-			// method_description_picturebox
-			// 
-			this->method_description_picturebox->Image = Image::FromFile(".\\images\\RK4.jpg");
-			this->method_description_picturebox->Location = System::Drawing::Point(0, 0);
-			this->method_description_picturebox->Name = L"method_description_picturebox";
-			this->method_description_picturebox->Size = System::Drawing::Size(651, 496);
-			this->method_description_picturebox->TabIndex = 0;
-			this->method_description_picturebox->TabStop = false;
-			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1184, 681);
+			this->ClientSize = System::Drawing::Size(1472, 681);
 			this->Controls->Add(this->x0_textbox0);
 			this->Controls->Add(this->textBox9);
 			this->Controls->Add(this->b_coef_label);
@@ -844,12 +861,12 @@ namespace NumericalMethods {
 			this->task_formulation_tab->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->task_formulation_picturebox))->EndInit();
 			this->method_tab->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->method_description_picturebox))->EndInit();
 			this->reference_tab->ResumeLayout(false);
 			this->reference_tab->PerformLayout();
 			this->phase_portrait_tab->ResumeLayout(false);
 			this->v_x_graph_tab->ResumeLayout(false);
 			this->w_x_graph_tab->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->method_description_picturebox))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -917,13 +934,10 @@ namespace NumericalMethods {
 					C1++;
 					return false;
 				}
-				else
+				else if (epsilon / pow(2, p + 1) > abs(S))
 				{
-					if (epsilon / pow(2, p + 1) > abs(S))
-					{
-						h *= 2;
-						C2++;
-					}
+					h *= 2;
+					C2++;
 				}
 			}
 			x += last_h;
@@ -952,6 +966,20 @@ namespace NumericalMethods {
 			h_max_label->Text = is_locerr_required ? "max(hi) = " + h_max + " при x = " + x_h_max : "";
 			h_min_label->Text = is_locerr_required ? "min(hi) = " + h_min + " при x = " + x_h_min : "";
 			max_abs_ui_vi_diff_label->Text = is_locerr_required ? "max|ui - vi| = " + ui_vi_abs_diff_max : "";
+		}
+
+		bool does_vec_include_nan(vector<double>& v) {
+			for (auto number : v)
+				if (isnan(number))
+					return true;
+			return false;
+		}
+
+		bool does_vec_include_inf(vector<double>& v) {
+			for (auto number : v)
+				if (isinf(number))
+					return true;
+			return false;
 		}
 
 		void main2()
@@ -1009,8 +1037,9 @@ namespace NumericalMethods {
 			int C2 = 0;
 			double abs_locerr_max = 0;
 			double h_max = h, h_min = h;
-			double x_h_max, x_h_min;
-			double v_min = u;
+			double x_h_max = x, x_h_min = x;
+			double v_min = u, v_max = u;
+			double w_min = u_, w_max = u_;
 			
 			data_frame->Rows->Add();
 			data_frame->Rows[0]->Cells["i_column"]->Value = 0;
@@ -1031,11 +1060,17 @@ namespace NumericalMethods {
 			}
 
 			vector<double> v = { u, u_ };
-
-			while (i - 1 < n && x_max - b > x)
+			bool stopflag = false;
+			while (i - 1 < n && x < x_max)
 			{
+				if (x_max - b < x) stopflag = true;
+				if (x + h > x_max)
+					while (x + h > x_max)
+						h /= 2;
+
 				vector<double> next_v2;
 				double S;
+				double last_h = h;
 				auto continue_calculating = RK4(main2_f, x, v, h, is_locerr_required, epsilon, next_v2, C1, C2, S);
 				if (!continue_calculating) continue;
 
@@ -1044,10 +1079,10 @@ namespace NumericalMethods {
 				data_frame->Rows[i]->Cells["x_column"]->Value = x;
 				data_frame->Rows[i]->Cells["vi_column"]->Value = v[0];
 				data_frame->Rows[i]->Cells["wi_column"]->Value = v[1];
-				data_frame->Rows[i]->Cells["hi_column"]->Value = h;
+				data_frame->Rows[i]->Cells["hi_column"]->Value = last_h;
 				if (is_locerr_required)
 				{
-					data_frame->Rows[i]->Cells["locerr_column"]->Value = S;
+					data_frame->Rows[i]->Cells["locerr_column"]->Value = abs(S * 16);
 					data_frame->Rows[i]->Cells["v2i_column"]->Value = next_v2[0];
 					data_frame->Rows[i]->Cells["vi_v2i_diff_column"]->Value = v[0] - next_v2[0];
 					data_frame->Rows[i]->Cells["w2i_column"]->Value = next_v2[1];
@@ -1055,6 +1090,9 @@ namespace NumericalMethods {
 					data_frame->Rows[i]->Cells["C1_column"]->Value = C1;
 					data_frame->Rows[i]->Cells["C2_column"]->Value = C2;
 				}
+				if (does_vec_include_nan(v) || does_vec_include_nan(next_v2)) break;
+				if (does_vec_include_inf(v) || does_vec_include_inf(next_v2)) break;
+
 				phase_portrait_pts->Add(v[0], v[1]);
 				v_x_pts->Add(x, v[0]);
 				w_x_pts->Add(x, v[1]);
@@ -1071,23 +1109,38 @@ namespace NumericalMethods {
 					x_h_max = x;
 				}
 				if (v_min > v[0]) v_min = v[0];
+				if (v_max < v[0]) v_max = v[0];
+				if (w_min > v[1]) w_min = v[1];
+				if (w_max < v[1]) w_max = v[1];
+
 				i++;
+
+				if (stopflag) break;
 			}
 
 			phase_portrait_graph->AddCurve("w(v)", phase_portrait_pts, Color::Red, SymbolType::None);
 			v_x_graph->AddCurve("v(x)", v_x_pts, Color::Red, SymbolType::None);
 			w_x_graph->AddCurve("w(x)", w_x_pts, Color::Red, SymbolType::None);
 			phase_portrait_graph->XAxis->Scale->Min = v_min;
+			phase_portrait_graph->XAxis->Scale->Max = v_max;
+			phase_portrait_graph->YAxis->Scale->Min = w_min;
+			phase_portrait_graph->YAxis->Scale->Max = w_max;
 			v_x_graph->XAxis->Scale->Min = Convert::ToDouble(data_frame->Rows[0]->Cells["x_column"]->Value);
+			v_x_graph->XAxis->Scale->Max = Convert::ToDouble(data_frame->Rows[i - 1]->Cells["x_column"]->Value);
+			v_x_graph->YAxis->Scale->Min = v_min;
+			v_x_graph->YAxis->Scale->Max = v_max;
 			w_x_graph->XAxis->Scale->Min = Convert::ToDouble(data_frame->Rows[0]->Cells["x_column"]->Value);
-			/*phase_portrait_graphcontrol->AxisChange();
+			w_x_graph->XAxis->Scale->Max = Convert::ToDouble(data_frame->Rows[i - 1]->Cells["x_column"]->Value);
+			w_x_graph->YAxis->Scale->Min = w_min;
+			w_x_graph->YAxis->Scale->Max = w_max;
+			phase_portrait_graphcontrol->AxisChange();
 			v_x_graph_graphcontrol->AxisChange();
-			w_x_graph_graphcontrol->AxisChange();*/
+			w_x_graph_graphcontrol->AxisChange();
 			phase_portrait_graphcontrol->Invalidate();
 			v_x_graph_graphcontrol->Invalidate();
 			w_x_graph_graphcontrol->Invalidate();
-
-			create_reference(i - 1, x_max, b, x, is_locerr_required, abs_locerr_max, h_max, x_h_max, h_min, x_h_min, NULL);
+			
+			create_reference(i - 1, x_max, b, x, is_locerr_required, abs_locerr_max * 16, h_max, x_h_max, h_min, x_h_min, NULL);
 
 			tab_frame->SelectTab(tab_frame->Controls->IndexOf(phase_portrait_tab));
 		}
@@ -1126,7 +1179,8 @@ namespace NumericalMethods {
 			int C2 = 0;
 			double abs_locerr_max = 0;
 			double h_max = h, h_min = h;
-			double x_h_max, x_h_min;
+			double x_h_max = x, x_h_min = x;
+			double v_min = u, v_max = u;
 
 			data_frame->Rows->Add();
 			data_frame->Rows[0]->Cells["i_column"]->Value = 0;
@@ -1144,11 +1198,18 @@ namespace NumericalMethods {
 			}
 
 			vector<double> v = { u };
+			bool stopflag = false;
 
 			while (i - 1 < n && x_max - b > x)
 			{
+				if (x_max - b < x) stopflag = true;
+				if (x + h > x_max)
+					while (x + h > x_max)
+						h /= 2;
+
 				vector<double> next_v2;
 				double S;
+				double last_h = h;
 				auto continue_calculating = RK4(main1_f, x, v, h, is_locerr_required, epsilon, next_v2, C1, C2, S);
 				if (!continue_calculating) continue;
 
@@ -1156,15 +1217,18 @@ namespace NumericalMethods {
 				data_frame->Rows[i]->Cells["i_column"]->Value = i;
 				data_frame->Rows[i]->Cells["x_column"]->Value = x;
 				data_frame->Rows[i]->Cells["vi_column"]->Value = v[0];
-				data_frame->Rows[i]->Cells["hi_column"]->Value = h;
+				data_frame->Rows[i]->Cells["hi_column"]->Value = last_h;
 				if (is_locerr_required)
 				{
-					data_frame->Rows[i]->Cells["locerr_column"]->Value = S;
+					data_frame->Rows[i]->Cells["locerr_column"]->Value = abs(S * 16);
 					data_frame->Rows[i]->Cells["v2i_column"]->Value = next_v2[0];
 					data_frame->Rows[i]->Cells["vi_v2i_diff_column"]->Value = v[0] - next_v2[0];
 					data_frame->Rows[i]->Cells["C1_column"]->Value = C1;
 					data_frame->Rows[i]->Cells["C2_column"]->Value = C2;
 				}
+				if (does_vec_include_nan(v) || does_vec_include_nan(next_v2)) break;
+				if (does_vec_include_inf(v) || does_vec_include_inf(next_v2)) break;
+				
 				phase_portrait_pts->Add(x, v[0]);
 
 				if (abs_locerr_max <= abs(S)) abs_locerr_max = abs(S);
@@ -1178,15 +1242,22 @@ namespace NumericalMethods {
 					h_max = h;
 					x_h_max = x;
 				}
+				if (v_min > v[0]) v_min = v[0];
+				if (v_max < v[0]) v_max = v[0];
 				i++;
+
+				if (stopflag) break;
 			}
 
 			phase_portrait_graph->AddCurve("v(x)", phase_portrait_pts, Color::Red, SymbolType::None);
 			phase_portrait_graph->XAxis->Scale->Min = Convert::ToDouble(data_frame->Rows[0]->Cells["x_column"]->Value);
-			//phase_portrait_graphcontrol->AxisChange();
+			phase_portrait_graph->XAxis->Scale->Max = Convert::ToDouble(data_frame->Rows[i - 1]->Cells["x_column"]->Value);
+			phase_portrait_graph->YAxis->Scale->Min = v_min;
+			phase_portrait_graph->YAxis->Scale->Max = v_max;
+			phase_portrait_graphcontrol->AxisChange();
 			phase_portrait_graphcontrol->Invalidate();
 
-			create_reference(i - 1, x_max, b, x, is_locerr_required, abs_locerr_max, h_max, x_h_max, h_min, x_h_min, NULL);
+			create_reference(i - 1, x_max, b, x, is_locerr_required, abs_locerr_max * 16, h_max, x_h_max, h_min, x_h_min, NULL);
 
 			tab_frame->SelectTab(tab_frame->Controls->IndexOf(phase_portrait_tab));
 		}
@@ -1206,6 +1277,7 @@ namespace NumericalMethods {
 			GraphPane^ phase_portrait_graph = phase_portrait_graphcontrol->GraphPane;
 			phase_portrait_graph->CurveList->Clear();
 			PointPairList^ phase_portrait_pts = gcnew ZedGraph::PointPairList();
+			PointPairList^ phase_portrait_sol_pts = gcnew ZedGraph::PointPairList();
 			phase_portrait_graph->Title->Text = "График зависимости смещения от времени";
 			phase_portrait_graph->XAxis->Title->Text = "х - время";
 			phase_portrait_graph->YAxis->Title->Text = "v - смещение";
@@ -1225,8 +1297,9 @@ namespace NumericalMethods {
 			int C2 = 0;
 			double abs_locerr_max = 0;
 			double h_max = h, h_min = h;
-			double x_h_max, x_h_min;
+			double x_h_max = x, x_h_min = x;
 			double ui_vi_abs_diff_max = 0;
+			double v_min = u, v_max = u;
 
 			data_frame->Rows->Add();
 			data_frame->Rows[0]->Cells["i_column"]->Value = 0;
@@ -1248,11 +1321,18 @@ namespace NumericalMethods {
 			vector<double> v = { u };
 			double C = (u / exp(-5 * x / 2));
 			auto sol = get_test_sol(C);
+			bool stopflag = false;
 
 			while (i - 1 < n && x_max - b > x)
 			{
+				if (x_max - b < x) stopflag = true;
+				if (x + h > x_max)
+					while (x + h > x_max)
+						h /= 2;
+
 				vector<double> next_v2;
 				double S;
+				double last_h = h;
 				auto continue_calculating = RK4(test_f, x, v, h, is_locerr_required, epsilon, next_v2, C1, C2, S);
 				if (!continue_calculating) continue;
 
@@ -1262,18 +1342,22 @@ namespace NumericalMethods {
 				data_frame->Rows[i]->Cells["i_column"]->Value = i;
 				data_frame->Rows[i]->Cells["x_column"]->Value = x;
 				data_frame->Rows[i]->Cells["vi_column"]->Value = v[0];
-				data_frame->Rows[i]->Cells["hi_column"]->Value = h;
+				data_frame->Rows[i]->Cells["hi_column"]->Value = last_h;
 				data_frame->Rows[i]->Cells["ui_column"]->Value = u;
 				data_frame->Rows[i]->Cells["ui_vi_abs_diff_column"]->Value = abs(u - v[0]);
 				if (is_locerr_required)
 				{
-					data_frame->Rows[i]->Cells["locerr_column"]->Value = S;
+					data_frame->Rows[i]->Cells["locerr_column"]->Value = abs(S * 16);
 					data_frame->Rows[i]->Cells["v2i_column"]->Value = next_v2[0];
 					data_frame->Rows[i]->Cells["vi_v2i_diff_column"]->Value = v[0] - next_v2[0];
 					data_frame->Rows[i]->Cells["C1_column"]->Value = C1;
 					data_frame->Rows[i]->Cells["C2_column"]->Value = C2;
 				}
+				if (does_vec_include_nan(v) || does_vec_include_nan(next_v2)) break;
+				if (does_vec_include_inf(v) || does_vec_include_inf(next_v2)) break;
+
 				phase_portrait_pts->Add(x, v[0]);
+				phase_portrait_sol_pts->Add(x, u);
 
 				if (abs_locerr_max <= abs(S)) abs_locerr_max = abs(S);
 				if (h_max <= h)
@@ -1286,16 +1370,25 @@ namespace NumericalMethods {
 					h_max = h;
 					x_h_max = x;
 				}
+				if (v_min > v[0]) v_min = v[0];
+				if (v_max < v[0]) v_max = v[0];
 				if (ui_vi_abs_diff_max <= abs(u - v[0])) ui_vi_abs_diff_max = abs(u - v[0]);
 				i++;
+
+				if (stopflag) break;
 			}
 
+			phase_portrait_graph->AddCurve("u(x)", phase_portrait_sol_pts, Color::Blue, SymbolType::None);
 			phase_portrait_graph->AddCurve("v(x)", phase_portrait_pts, Color::Red, SymbolType::None);
+			
 			phase_portrait_graph->XAxis->Scale->Min = Convert::ToDouble(data_frame->Rows[0]->Cells["x_column"]->Value);
-			//phase_portrait_graphcontrol->AxisChange();
+			phase_portrait_graph->XAxis->Scale->Max = Convert::ToDouble(data_frame->Rows[i - 1]->Cells["x_column"]->Value);
+			phase_portrait_graph->YAxis->Scale->Min = v_min;
+			phase_portrait_graph->YAxis->Scale->Max = v_max;
+			phase_portrait_graphcontrol->AxisChange();
 			phase_portrait_graphcontrol->Invalidate();
 
-			create_reference(i - 1, x_max, b, x, is_locerr_required, abs_locerr_max, h_max, x_h_max, h_min, x_h_min, ui_vi_abs_diff_max);
+			create_reference(i - 1, x_max, b, x, is_locerr_required, abs_locerr_max * 16, h_max, x_h_max, h_min, x_h_min, ui_vi_abs_diff_max);
 
 			tab_frame->SelectTab(tab_frame->Controls->IndexOf(phase_portrait_tab));
 		}
